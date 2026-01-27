@@ -9,7 +9,7 @@
 /* hero background image */
 .bgimage {
     height: 80vh;
-    background: url('images/coloradoImage.jpg');
+    background: url('images/ColoradoImage.jpg');
     background-size: cover;
     position: relative;
 }
@@ -102,6 +102,50 @@
     margin-top: 4rem;
     padding-top: 4rem;
 } */
+
+/* About Section Styling */
+.about {
+    display: flex;
+    /* enable Flexbox */
+    justify-content: center;
+    /* center horizontally */
+    align-items: center;
+    /* center vertically */
+    height: 40vh;
+    /* full viewport height */
+    padding: 0 20px;
+    /* spacing for smaller screens */
+    background: linear-gradient(to bottom,
+            #000000 0%,
+            rgba(0, 0, 0, 0.9) 75%,
+            rgba(0, 0, 0, 0.8) 100%);
+    box-sizing: border-box;
+}
+
+.About {
+    background: palegoldenrod;
+    /* optional background overlay */
+}
+
+.text-center {
+    text-align: center !important;
+    /* ensures text is centered */
+}
+
+.about-text {
+    max-width: 800px;
+    /* limits paragraph width */
+    font-size: 1rem;
+    /* consistent font size */
+    line-height: 1.6;
+    /* improves readability */
+    color: #212529;
+    /* readable text color */
+    text-align: center;
+    /* ensures text inside paragraph is centered */
+}
+
+
 
 #contact {
     padding-bottom: 4rem;
