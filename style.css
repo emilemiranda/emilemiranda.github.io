@@ -9,7 +9,7 @@
 /* hero background image */
 .bgimage {
     height: 80vh;
-    background: url('images/ColoradoImage.jpg');
+    background: url('images/coloradoImage.jpg');
     background-size: cover;
     position: relative;
 }
