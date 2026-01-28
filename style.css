@@ -41,7 +41,7 @@ body {
 -----------------------------------*/
 .bgimage {
     height: 80vh;
-    background: url('images/ColoradoImage.jpg') no-repeat center center;
+    background: url('images/coloradoImage.jpg') no-repeat center center;
     background-size: cover;
     position: relative;
 }
