@@ -1,91 +1,49 @@
-/* Import the font */
+/*-----------------------------------
+  Import Fonts
+-----------------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
 
-/* display background color black on navbar scroll */
+/*-----------------------------------
+  Global Styles
+-----------------------------------*/
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.0625em;
+    color: #212529;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+/*-----------------------------------
+  Navbar Scroll Background
+-----------------------------------*/
 .navbarScroll.navbarDark {
     background-color: black;
 }
 
-/* hero background image */
+/*-----------------------------------
+  Hero Section
+-----------------------------------*/
 .bgimage {
     height: 80vh;
-    background: url('images/ColoradoImage.jpg');
+    background: url('images/ColoradoImage.jpg') no-repeat center center;
     background-size: cover;
     position: relative;
-}
-
-/* text css above hero image*/
-/*.hero_title {
-    font-size: 4.5rem;
-    line-height: 6.5rem;
-    letter-spacing: 0.8rem;
-    font-family: 'sans-serif';
-}*/
-
-.hero_title {
-    text-align: center;
-}
-
-.hero_title {
-    font-family: 'Poiret One', cursive;
-    font-size: 6.5rem;
-    line-height: 6.5rem;
-    letter-spacing: 0.8rem;
-    text-transform: uppercase;
-
-    /* Gold text effect */
-    /*background: rgba(0, 0, 0, 0.5);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;*/
-    font-family: 'Poiret One', cursive;
-    font-weight: 580;
-    font-size: 6.5rem;
-    line-height: 6.5rem;
-    letter-spacing: 0.8rem;
-    text-transform: uppercase;
-    color: rgba(0, 0, 0, 0.8);
-
-    margin: 0;
-}
-
-/* Tablet */
-@media (min-width: 768px) {
-    .masthead h1 {
-        font-size: 4rem;
-        line-height: 4rem;
-    }
-}
-
-/* Desktop */
-@media (min-width: 992px) {
-    .masthead h1 {
-        font-size: 6.5rem;
-        line-height: 6.5rem;
-    }
-}
-
-
-/*.hero_desc {
-    font-size: 2rem;
-    color: rgba(0, 0, 0, 0.5);
-}*/
-
-.hero_desc {
-    margin: 0.5rem auto 3rem;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 2rem;
-    font-weight: 300;
-    line-height: 1.2;
-    letter-spacing: 0.0625em;
-    color: rgba(0, 0, 0, 0.7);
-
-    /* 👇 force one line */
-    white-space: nowrap;
-
-    /* 👇 perfect centering */
-    text-align: center;
-    width: fit-content;
 }
 
 .hero-text {
@@ -97,66 +55,85 @@
     color: white;
 }
 
-/* spacing on all sections */
-/* #about, #services, #portfolio, #contact {
-    margin-top: 4rem;
-    padding-top: 4rem;
-} */
+.hero_title {
+    font-family: 'Poiret One', cursive;
+    font-weight: 580;
+    font-size: 6.5rem;
+    line-height: 6.5rem;
+    letter-spacing: 0.8rem;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    margin: 0;
+}
 
-/* About Section Styling */
+@media (min-width: 768px) {
+    .masthead h1 {
+        font-size: 4rem;
+        line-height: 4rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .masthead h1 {
+        font-size: 6.5rem;
+        line-height: 6.5rem;
+    }
+}
+
+.hero_desc {
+    margin: 0.5rem auto 3rem;
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: 0.0625em;
+    color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    width: fit-content;
+    white-space: nowrap;
+    /* force single line */
+}
+
+/*-----------------------------------
+  About Section
+-----------------------------------*/
 .about {
     display: flex;
-    /* enable Flexbox */
     justify-content: center;
-    /* center horizontally */
     align-items: center;
-    /* center vertically */
     height: 40vh;
-    /* full viewport height */
     padding: 0 20px;
-    /* spacing for smaller screens */
-    background: linear-gradient(to bottom,
-            #000000 0%,
-            rgba(0, 0, 0, 0.9) 75%,
-            rgba(0, 0, 0, 0.8) 100%);
-    box-sizing: border-box;
+    background: linear-gradient(to bottom, #000000 0%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%);
 }
 
 .About {
     background: palegoldenrod;
-    /* optional background overlay */
-}
-
-.text-center {
-    text-align: center !important;
-    /* ensures text is centered */
+    /* optional overlay */
 }
 
 .about-text {
     max-width: 800px;
-    /* limits paragraph width */
     font-size: 1rem;
-    /* consistent font size */
     line-height: 1.6;
-    /* improves readability */
     color: #212529;
-    /* readable text color */
     text-align: center;
-    /* ensures text inside paragraph is centered */
 }
 
-
-
-#contact {
-    padding-bottom: 4rem;
-}
-
-/* about section image css */
 .imageAboutPage {
     width: 100%;
 }
 
-/* services section css */
+/*-----------------------------------
+  Services Section
+-----------------------------------*/
+#services {
+    padding: 0.5in 0;
+}
+
+#services h1 {
+    margin-bottom: 2rem;
+}
+
 .servicesText.card {
     height: 280px;
     cursor: pointer;
@@ -180,10 +157,16 @@
     border: 1px solid #008000;
 }
 
-/* social media icons styling */
+/*-----------------------------------
+  Social Media Icons
+-----------------------------------*/
 .social-icons {
     font-size: 36px;
     cursor: pointer;
+}
+
+.fab {
+    color: #000;
 }
 
 .fa-facebook:hover,
@@ -194,14 +177,117 @@
     color: #008000;
 }
 
-.fab {
-    color: #000000;
+/*-----------------------------------
+  Footer / Contact Section
+-----------------------------------*/
+.footer-contact {
+    background-color: #f8f9fa;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.0625em;
+    color: #212529;
 }
 
-/* footer styling */
-#footer {
-    background-color: #808080;
+.footer-contact .container {
+    width: 100%;
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 0 0.75rem;
+}
+
+@media (min-width: 576px) {
+    .footer-contact .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .footer-contact .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .footer-contact .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .footer-contact .container {
+        max-width: 1140px;
+    }
+}
+
+/* Contact Heading */
+.footer-contact h3 {
+    font-family: 'Poiret One', cursive;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.4rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    color: darkgoldenrod;
+}
+
+/* Circular Contact Image */
+.footer-contact .contact-img {
+    display: block;
+    margin: 1rem auto 1.5rem;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid darkgoldenrod;
+}
+
+/* Contact Text */
+.footer-contact .contact-text {
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 1rem;
+}
+
+/* Footer Social Icons */
+.footer-contact .footer-item {
+    margin-top: 1rem;
     text-align: center;
-    margin-top: 0;
-    margin-bottom: 0rem;
+}
+
+.footer-contact .footer-item .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin: 0 0.5rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+/* Brand colors */
+.footer-contact .footer-item .twitter {
+    background-color: #999ea2;
+}
+
+.footer-contact .footer-item .linkedin {
+    background-color: #999ea2;
+}
+
+.footer-contact .footer-item .github {
+    background-color: #333;
+}
+
+/* Hover Effect */
+.footer-contact .footer-item .social-icon:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+    cursor: pointer;
 }
