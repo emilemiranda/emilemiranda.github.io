@@ -250,3 +250,33 @@
 .resume-section .mb-4 {
     width: 100%;
 }
+
+#contact .footer-inline {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    gap: 0.35rem;
+    min-width: 0;
+}
+
+#contact .footer-inline-link {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+/* Keep it in one line only on very wide screens */
+@media (min-width: 1400px) {
+    #contact .footer-inline {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        white-space: nowrap;
+    }
+
+    #contact .footer-inline-link {
+        white-space: nowrap;
+        overflow-wrap: normal;
+        word-break: normal;
+    }
+}
