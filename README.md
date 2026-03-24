@@ -57,6 +57,12 @@ Deployment
 </a>
 </p>
 
+<p align="center">
+  <a href="https://www.arcgis.com/apps/sceneviewer/index.html?webscene=d9edbe52adae450693e33e7bb7190a80">
+    <img src="/assets/img/portfolio/miami.png" width="800" alt="City of Miami Beach Sea Level Rise Scene Preview">
+  </a>
+</p>
+
 Description:
 <br>
 <br>
