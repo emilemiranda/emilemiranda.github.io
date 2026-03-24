@@ -52,15 +52,8 @@ Deployment
 
 <strong>Project 1:</strong> City of Miami Beach Sea Level Rise
 <p align="center">
-<a href="https://www.arcgis.com/home/webscene/viewer.html?webscene=d9edbe52adae450693e33e7bb7190a80">
-<img src="/assets/img/portfolio/miami.png" width="800" alt="City of Miami Beach Sea Level Rise Scene Preview">
-</a>
-</p>
-
-<p align="center">
-  <a href="https://www.arcgis.com/apps/sceneviewer/index.html?webscene=d9edbe52adae450693e33e7bb7190a80"
-     target="_blank" rel="noopener noreferrer">
-    <img src="/assets/img/portfolio/miami.png" width="800">
+  <a href="https://www.arcgis.com/home/item.html?id=d9edbe52adae450693e33e7bb7190a80">
+    <img src="/assets/img/portfolio/miami.png" width="800" alt="City of Miami Beach Sea Level Rise Scene Preview">
   </a>
 </p>
 
