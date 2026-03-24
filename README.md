@@ -69,6 +69,12 @@ ArcGIS
 <br>
 
 [![Live Map](https://img.shields.io/badge/Live-Demo-blue)](https://www.arcgis.com/home/webscene/viewer.html?webscene=d9edbe52adae450693e33e7bb7190a80)
+<h2>
+  <a href="https://www.arcgis.com/home/webscene/viewer.html?webscene=d9edbe52adae450693e33e7bb7190a80"
+     style="text-decoration: none; color: inherit;">
+    City of Miami Beach Sea Level Rise
+  </a>
+</h2>
 
 ---
 
@@ -96,6 +102,12 @@ ArcGIS
 <br>
 
 [![Live Map](https://img.shields.io/badge/Live-Demo-blue)](https://www.arcgis.com/apps/mapviewer/index.html?webmap=5b7c45a75d304cc1a375e395ea4682bf)
+<h6>
+  <a href="https://www.arcgis.com/apps/mapviewer/index.html?webmap=5b7c45a75d304cc1a375e395ea4682bf"
+     style="text-decoration: none; color: licorice;">
+    Fossil Exploration
+  </a>
+</h6>
 
 Project 3: USA 2016 Daytime Population
 <br>
@@ -121,10 +133,9 @@ ArcGIS
 <br>
 
 [![Live Map](https://img.shields.io/badge/Live-Demo-blue)](https://www.arcgis.com/apps/mapviewer/index.html?webmap=ee296884a6154d839c87677cd9c1ead9)
-<br>
 <h6>
   <a href="https://www.arcgis.com/apps/mapviewer/index.html?webmap=ee296884a6154d839c87677cd9c1ead9"
-     style="text-decoration: none; color: inherit;">
-    ArcGIS Map Viewer
+     style="text-decoration: none; color: licorice;">
+    USA 2016 Daytime Population
   </a>
 </h6>
