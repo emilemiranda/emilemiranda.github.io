@@ -7,7 +7,7 @@ The portfolio is designed to highlight and present spatial data processing, inte
 
 <h6>
   <a href="https://emilemiranda.github.io/"
-     style="text-decoration: none; color: black;">
+     style="text-decoration: none; color: #353935;">
     https://emilemiranda.github.io
   </a>
 </h6>
@@ -67,7 +67,7 @@ Key Features:
 - Spatial data visualization 
 - User interaction (popups, filtering, toggles) 
 
-Technologies Used:
+Technology Used:
 <br>
 ArcGIS
 <br>
@@ -75,7 +75,7 @@ ArcGIS
 [![Live Map](https://img.shields.io/badge/Live-Demo-blue)](https://www.arcgis.com/home/webscene/viewer.html?webscene=d9edbe52adae450693e33e7bb7190a80)
 <h6>
   <a href="https://www.arcgis.com/home/webscene/viewer.html?webscene=d9edbe52adae450693e33e7bb7190a80"
-     style="text-decoration: none; color: inherit;">
+     style="text-decoration: none; color: #353935;">
     City of Miami Beach Sea Level Rise
   </a>
 </h6>
@@ -98,7 +98,7 @@ Key Features:
 - Data-driven styling 
 - Analytical outputs 
 
-Technologies Used:
+Technology Used:
 <br>
 ArcGIS
 <br>
@@ -106,7 +106,7 @@ ArcGIS
 [![Live Map](https://img.shields.io/badge/Live-Demo-blue)](https://www.arcgis.com/apps/mapviewer/index.html?webmap=5b7c45a75d304cc1a375e395ea4682bf)
 <h6>
   <a href="https://www.arcgis.com/apps/mapviewer/index.html?webmap=5b7c45a75d304cc1a375e395ea4682bf"
-     style="text-decoration: none; color: licorice;">
+     style="text-decoration: none; color: #353935;">
     Fossil Exploration
   </a>
 </h6>
@@ -129,7 +129,7 @@ Key Features:
 - Spatial analysis results 
 - Clean cartographic design 
 
-Technologies Used:
+Technology Used:
 <br>
 ArcGIS
 <br>
