@@ -69,9 +69,6 @@ Technologies Used:
 ArcGIS
 <br>
 <br>
-<img src="assets/img/portfolio/miami.png" width="800" alt="Map Preview">
-<br>
-![Flood Risk Map](assets/img/portfolio/miami.png)
 
 [![Live Map](https://img.shields.io/badge/Live-Demo-blue)](https://www.arcgis.com/home/webscene/viewer.html?webscene=d9edbe52adae450693e33e7bb7190a80)
 
@@ -101,11 +98,7 @@ ArcGIS
 <br>
 [![Flood Risk Map](assets/img/portfolio/fossil.png)]
 
-Live
-<br>
 [![Live Map](https://img.shields.io/badge/Live-Demo-blue)](https://www.arcgis.com/apps/mapviewer/index.html?webmap=5b7c45a75d304cc1a375e395ea4682bf)
-
----
 
 <p align="center">
 <a href="https://www.arcgis.com/apps/mapviewer/index.html?webmap=ee296884a6154d839c87677cd9c1ead9">
@@ -130,9 +123,6 @@ Technologies Used:
 <br>
 ArcGIS
 <br>
-[![Flood Risk Map](assets/img/portfolio/employment.png.png)]
 
-Live
-<br>
 [![Live Map](https://img.shields.io/badge/Live-Demo-blue)](https://www.arcgis.com/apps/mapviewer/index.html?webmap=ee296884a6154d839c87677cd9c1ead9)
-https://www.arcgis.com/apps/mapviewer/index.html?webmap=ee296884a6154d839c87677cd9c1ead9
+[![Live Map](https://img.shields.io/badge/Live-Demo-blue)](https://www.arcgis.com/apps/mapviewer/index.html?webmap=ee296884a6154d839c87677cd9c1ead9)
