@@ -8,7 +8,7 @@ The portfolio is designed to highlight and present spatial data processing, inte
 <h6>
   <a href="https://emilemiranda.github.io/"
      style="text-decoration: none; color: #353935;">
-    https://emilemiranda.github.io
+    emilemiranda.github.io
   </a>
 </h6>
 
@@ -58,7 +58,6 @@ Deployment
 </p>
 
 Description:
-<br>
 <br>
 This feature class has been created to illustrate the buildings planimetric in 2015. This layer was clipped to only include buildings within the City of Miami Beach boundary.  The process to create the buildings 3D models is explained in the ESRI doc.
 
