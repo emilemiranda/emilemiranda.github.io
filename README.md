@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/emilemiranda/emilemiranda.github.io/redirect.html">
+  <a href="https://emilemiranda.github.io/emilemiranda/redirect.html">
     <img src="/assets/img/portfolio/miami.png" width="800">
   </a>
 </p>
