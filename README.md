@@ -53,6 +53,7 @@ Featured Projects
 
 Project 1: City of Miami Beach Sea Level Rise
 <br>
+<br>
 Description:
 <br>
 This feature class has been created to illustrate the buildings planimetric in 2015. This layer was clipped to only include buildings within the City of Miami Beach boundary.  The process to create the buildings 3D models is explained in the ESRI doc.
@@ -67,16 +68,11 @@ Technologies Used:
 <br>
 ArcGIS
 <br>
-<img src="src/assets/img/portfolio/miami.png" width="800" alt="Map Preview">
-<br>
-<img src="/assets/img/portfolio/miami.png" width="800" alt="Map Preview">
 <br>
 <img src="assets/img/portfolio/miami.png" width="800" alt="Map Preview">
 <br>
-[![Flood Risk Map](assets/img/portfolio/miami.png)]
+![Flood Risk Map](assets/img/portfolio/miami.png)
 
-Live
-<br>
 [![Live Map](https://img.shields.io/badge/Live-Demo-blue)](https://www.arcgis.com/home/webscene/viewer.html?webscene=d9edbe52adae450693e33e7bb7190a80)
 
 ---
