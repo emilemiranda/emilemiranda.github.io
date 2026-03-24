@@ -1,9 +1,3 @@
-<p align="center">
-  <a href="https://github.com/emilemiranda/emilemiranda.github.io/redirect.html">
-    <img src="/assets/img/portfolio/miami.png" width="800">
-  </a>
-</p>
-
 <strong>GIS Web Portfolio</strong>
 
 Overview
