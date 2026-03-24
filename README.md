@@ -47,7 +47,7 @@ Featured Projects
 
 <p align="center">
 <a href="https://www.arcgis.com/home/webscene/viewer.html?webscene=d9edbe52adae450693e33e7bb7190a80">
-<img src="src/assets/img/portfolio/miami.png" width="800" alt="City of Miami Beach Sea Level Rise Scene Preview">
+<img src="/assets/img/portfolio/miami.png" width="800" alt="City of Miami Beach Sea Level Rise Scene Preview">
 </a>
 </p>
 
