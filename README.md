@@ -67,7 +67,13 @@ Technologies Used:
 <br>
 ArcGIS
 <br>
-[!Map Preview (src/assets/img/portfolio/miami.png)]
+<img src="src/assets/img/portfolio/miami.png" width="800" alt="Map Preview">
+<br>
+<img src="/assets/img/portfolio/miami.png" width="800" alt="Map Preview">
+<br>
+<img src="assets/img/portfolio/miami.png" width="800" alt="Map Preview">
+<br>
+[![Flood Risk Map](assets/img/portfolio/miami.png)]
 
 Live
 <br>
@@ -97,7 +103,7 @@ Technologies Used:
 <br>
 ArcGIS
 <br>
-[!Map Preview(/src/assets/img/portfolio/fossil.png)]
+[![Flood Risk Map](assets/img/portfolio/fossil.png)]
 
 Live
 <br>
@@ -128,7 +134,7 @@ Technologies Used:
 <br>
 ArcGIS
 <br>
-[!Map Preview(assets/img/portfolio/employment.png)]
+[![Flood Risk Map](assets/img/portfolio/employment.png.png)]
 
 Live
 <br>
