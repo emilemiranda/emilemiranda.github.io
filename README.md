@@ -6,13 +6,11 @@ This is an interactive web-based platform showcasing geospatial projects, spatia
 The portfolio is designed to highlight and present spatial data processing, interactive visualization, and web deployment.
 
 <h6>
-  <a href="https://www.arcgis.com/apps/mapviewer/index.html?webmap=ee296884a6154d839c87677cd9c1ead9"
-     style="text-decoration: none; color: licorise;">
-    ArcGIS Map Viewer
+  <a href="https://emilemiranda.github.io/"
+     style="text-decoration: none; color: black;">
+    https://emilemiranda.github.io
   </a>
 </h6>
-
-https://emilemiranda.github.io/
 
 ---
 
@@ -52,7 +50,7 @@ Deployment
 
 <strong>Featured Projects</strong>
 
-Project 1: City of Miami Beach Sea Level Rise
+<strong>Project 1:</strong> City of Miami Beach Sea Level Rise
 <br>
 <p align="center">
 <a href="https://www.arcgis.com/home/webscene/viewer.html?webscene=d9edbe52adae450693e33e7bb7190a80">
@@ -81,9 +79,9 @@ ArcGIS
     City of Miami Beach Sea Level Rise
   </a>
 </h6>
-
-
-Project 2: Fossil Exploration
+<br>
+<br>
+<strong>Project 2:</strong> Fossil Exploration
 <br>
 <p align="center">
 <a href="https://www.arcgis.com/apps/mapviewer/index.html?webmap=5b7c45a75d304cc1a375e395ea4682bf">
@@ -112,9 +110,9 @@ ArcGIS
     Fossil Exploration
   </a>
 </h6>
-
-
-Project 3: USA 2016 Daytime Population
+<br>
+<br>
+<strong>Project 3:</strong> USA 2016 Daytime Population
 <br>
 <p align="center">
 <a href="https://www.arcgis.com/apps/mapviewer/index.html?webmap=ee296884a6154d839c87677cd9c1ead9">
