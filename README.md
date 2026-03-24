@@ -50,7 +50,7 @@ Deployment
 
 <strong>Featured Projects</strong>
 
-<strong>Project 1:</strong> City of Miami Beach Sea Level Rise
+- <strong>Project 1:</strong> City of Miami Beach Sea Level Rise
 <br>
 <p align="center">
 <a href="https://www.arcgis.com/home/webscene/viewer.html?webscene=d9edbe52adae450693e33e7bb7190a80">
@@ -59,6 +59,7 @@ Deployment
 </p>
 
 Description:
+<br>
 <br>
 This feature class has been created to illustrate the buildings planimetric in 2015. This layer was clipped to only include buildings within the City of Miami Beach boundary.  The process to create the buildings 3D models is explained in the ESRI doc.
 
@@ -80,8 +81,7 @@ ArcGIS
   </a>
 </h6>
 <br>
-<br>
-<strong>Project 2:</strong> Fossil Exploration
+- <strong>Project 2:</strong> Fossil Exploration
 <br>
 <p align="center">
 <a href="https://www.arcgis.com/apps/mapviewer/index.html?webmap=5b7c45a75d304cc1a375e395ea4682bf">
@@ -110,7 +110,6 @@ ArcGIS
     Fossil Exploration
   </a>
 </h6>
-<br>
 <br>
 <strong>Project 3:</strong> USA 2016 Daytime Population
 <br>
