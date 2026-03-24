@@ -32,7 +32,7 @@ GIS & Spatial Analysis
 - QGIS  *(optional)*
 - ArcGIS 
 
-<strong>Data & Formats
+Data & Formats
 - GeoJSON  
 - Shapefiles  *(optional)*
 - CSV  *(optional)*
