@@ -43,35 +43,6 @@ Deployment
 
 ---
 
-Project Structure
-project-folder/
-│
-├── index.html
-├── resume.html
-├── map.html
-│
-├── css/
-│ ├── styles.css
-│ └── resume.css
-│
-├── js/
-│ ├── main.js
-│ └── map.js
-│
-├── data/
-│ ├── geojson/ # GeoJSON datasets
-│ └── Shapfiles *(optional)*
-│ └── CSV *(optional)*
-│ └── raster/ *(optional)*
-│
-├── assets/
-│ ├── images/ # Images and screenshots
-│ └── icons/ # Icons and graphics
-│
-└── README.md
-
----
-
 Featured Projects
 
 <p align="center">
@@ -96,11 +67,11 @@ Technologies Used:
 <br>
 ArcGIS
 <br>
-[![Map Preview](src/assets/img/portfolio/miami.png)]
+[!Map Preview (src/assets/img/portfolio/miami.png)]
 
 Live
 <br>
-https://www.arcgis.com/home/webscene/viewer.html?webscene=d9edbe52adae450693e33e7bb7190a80
+[![Live Map](https://img.shields.io/badge/Live-Demo-blue)](https://www.arcgis.com/home/webscene/viewer.html?webscene=d9edbe52adae450693e33e7bb7190a80)
 
 ---
 
@@ -126,11 +97,11 @@ Technologies Used:
 <br>
 ArcGIS
 <br>
-[![Map Preview](src/assets/img/portfolio/fossil.png)]
+[!Map Preview(/src/assets/img/portfolio/fossil.png)]
 
 Live
 <br>
-https://www.arcgis.com/apps/mapviewer/index.html?webmap=5b7c45a75d304cc1a375e395ea4682bf
+[![Live Map](https://img.shields.io/badge/Live-Demo-blue)](https://www.arcgis.com/apps/mapviewer/index.html?webmap=5b7c45a75d304cc1a375e395ea4682bf)
 
 ---
 
@@ -157,7 +128,7 @@ Technologies Used:
 <br>
 ArcGIS
 <br>
-[![Map Preview](src/assets/img/portfolio/employment.png)]
+[!Map Preview(assets/img/portfolio/employment.png)]
 
 Live
 <br>
