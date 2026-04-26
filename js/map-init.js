@@ -6,7 +6,7 @@
    zoom anchors so they look uniform.
    - Requires Leaflet + FontAwesome to be loaded before this script.
 */
-
+let _timeUIInitialized = false;
 (function () {
     // --------- Config ---------
     const ARC_URL = 'https://services2.arcgis.com/C8EMgrsFcRFL6LrL/arcgis/rest/services/Significant_Earthquakes/FeatureServer/0';
@@ -1918,7 +1918,13 @@
                     if (slider) {
                         slider.min = Math.max(1900, minY);
                         slider.max = maxY;
-                        slider.value = maxY;
+
+                        // ✅ ONLY set default once (first load)
+                        if (!_timeUIInitialized) {
+                            slider.value = maxY;
+                            _timeUIInitialized = true;
+                        }
+
                         if (yearValueEl) yearValueEl.innerHTML = slider.value;
                     }
                 } else {
@@ -2201,7 +2207,7 @@ ${sel}:focus-visible {
                     window.addEventListener('resize', debounce(matchCustomButtonsToZoom, 150));
                 })();
 
-                setInitialMapState();
+                //setInitialMapState();
 
             } catch (err) {
                 console.error('Could not load earthquake layer (fetch error):', err);
