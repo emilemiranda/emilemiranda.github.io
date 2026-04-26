@@ -4363,6 +4363,7 @@ body {
 .leaflet-left,
 .leaflet-right,
 .leaflet-bottom {
+    margin-top: 5px;
     z-index: 1000;
 }
 
@@ -12750,8 +12751,8 @@ html {
 
 .page-section {
     /*padding: 2rem 0;*/
-    padding-top: 4rem;
-    padding-bottom: 1rem;
+    padding-top: 0rem;
+    /*padding-bottom: 1rem;*/
 }
 
 .page-section .masthead-avatar {
@@ -12803,7 +12804,7 @@ html {
 /* Default spacing for each category */
 .portfolio-category {
     padding-top: 3rem;
-    padding-bottom: 3rem;
+    /*padding-bottom: 3rem;*/
 }
 
 /* Spatial Analysis spacing */
@@ -12821,7 +12822,7 @@ html {
 /* Web Maps spacing */
 .portfolio-category.web-maps {
     padding-top: 0rem;
-    padding-bottom: 3rem;
+    /*padding-bottom: 3rem;*/
 }
 
 /* Open dropdown on hover for larger screens */
@@ -12860,6 +12861,13 @@ html {
     /* Increase space above */
     padding-bottom: 6rem;
     /* Increase space below */
+}
+
+.about-section {
+    background-image: url("../assets/img/portfolio/contours.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .divider-custom {
@@ -13020,8 +13028,33 @@ html {
 }
 
 .masthead {
+    min-height: 70vh;
     padding-top: 6rem;
     padding-bottom: 6rem;
+    background-size: cover;
+    background-position: center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.masthead-index {
+    background-image: url("../assets/img/portfolio/map.png");
+}
+
+.masthead-resume {
+    background-image: url("../assets/img/portfolio/map_2.png");
+}
+
+.masthead-map {
+    background-image: url("../assets/img/portfolio/map_3.png");
+}
+
+.masthead-content {
+    padding: 1rem;
 }
 
 .masthead .masthead-heading {
@@ -13188,6 +13221,7 @@ html {
     color: #fff;
     padding-top: 5rem;
     padding-bottom: 5rem;
+    /* margin-top: 5px; */
 }
 
 .footer a {
