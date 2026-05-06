@@ -1925,7 +1925,7 @@ let _timeUIInitialized = false;
                             _timeUIInitialized = true;
                         }
 
-                        if (yearValueEl) yearValueEl.innerHTML = slider.value;
+                        if (yearValueEl) yearValueEl.textContent = slider.value;
                     }
                 } else {
                     // ensure year slider uses current year max
