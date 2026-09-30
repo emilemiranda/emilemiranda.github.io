@@ -12746,7 +12746,7 @@ body {
 
 html {
     height: 100%;
-    scroll-padding-top: calc(4.5rem - 1px);
+    scroll-padding-top: 84px;
 }
 
 .page-section {
@@ -12857,9 +12857,9 @@ html {
 }
 
 #about {
-    padding-top: 6rem;
+    padding-top: 3rem;
     /* Increase space above */
-    padding-bottom: 6rem;
+    padding-bottom: 3rem;
     /* Increase space below */
 }
 
