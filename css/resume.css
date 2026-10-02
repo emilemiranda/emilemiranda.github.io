@@ -1,282 +1,430 @@
-/* ===============================
-   Resume Section
-   =============================== */
-#resume {
-    padding-top: 30px;
-    /* space above the Resume section */
-    padding-bottom: 19px;
-    /* space below the Resume section */
-    padding-left: 0;
-    padding-right: 0;
+/*
+  resume.css
+  Resume-specific presentation only. Shared site chrome belongs in styles.css.
+*/
+
+.resume-page {
+    background: var(--site-page-bg);
 }
 
-#resume h2 {
-    font-family: 'Montserrat', sans-serif;
-    color: #2c3e50;
-    font-size: 36px;
-    text-transform: uppercase;
-    text-align: center;
-    margin-bottom: 30px;
-    letter-spacing: 1px;
+.resume-shell {
+    padding-block: 3.75rem 5rem;
 }
 
-#resume hr {
-    border-top: 3px solid #2c3e50;
-    width: 170px;
-    margin: 15px auto 30px auto;
+.resume-header-card {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1.75rem;
+    border: 1px solid var(--site-border);
+    border-radius: 1.15rem;
+    background: #fff;
+    box-shadow: var(--site-shadow);
 }
 
-#resume h4 {
-    font-family: 'Lato', sans-serif;
-    /* match your headings */
-    font-size: 18px;
-    /* adjust size */
-    font-weight: 700;
-    color: #2c3e50;
-    /* optional color */
-    margin-top: 20px;
-    /* space from hr */
-    margin-bottom: 15px;
-    /* space before Summary section */
+.resume-header-card::before {
+    content: "";
+    display: block;
+    height: 0.3rem;
+    background: linear-gradient(90deg, var(--site-accent), var(--site-navy));
 }
 
-#resume h4.text-primary {
-    font-family: 'Montserrat', sans-serif;
-    /* same as main heading */
-    font-size: 20px;
-    /* slightly smaller than h2 */
-    font-weight: 505;
-    /* semi-bold */
-    margin-top: 20px;
-    /* space below hr */
-    margin-bottom: 40px;
-    /* space before Summary section */
+.resume-header-inner {
+    padding: clamp(1.4rem, 3vw, 2.25rem);
 }
 
-#resume p,
-#resume li {
-    font-family: 'Lato', sans-serif;
-    font-size: 17px;
-    /* current paragraph font size */
-    line-height: 1.7;
-    color: #555;
+.resume-name {
+    margin: 0;
+    color: var(--site-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.05;
 }
 
-#resume ul {
+.resume-role {
+    margin: 0.45rem 0 0;
+    color: var(--site-accent);
+    font-family: "Montserrat", system-ui, sans-serif;
+    font-size: 0.98rem;
+    font-weight: 800;
+    line-height: 1.45;
+}
+
+.resume-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem 1rem;
+    margin: 1.1rem 0 0;
+    padding: 0;
     list-style: none;
-    padding-left: 0;
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom: 0;
-    padding-left: 22px;
-    /* space for custom bullet */
-    padding-right: 0;
-    box-sizing: border-box;
+    color: var(--site-muted);
+    font-size: 0.86rem;
 }
 
-#resume ul li {
-    margin-bottom: 10px;
-    position: relative;
-    padding-left: 20px;
-    width: 100%;
-    padding-right: 0;
+.resume-contact li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
 }
 
-#resume ul li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: #198754;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 1;
-    top: 0.3em;
-    font-family: inherit;
+.resume-contact i {
+    color: var(--site-accent);
 }
 
-#resume .section-content {
-    max-width: 900px;
-    margin: 0 auto;
+.resume-contact a {
+    color: inherit;
+    text-decoration: none;
 }
 
-#resume .btn-primary {
-    background-color: #007bff;
-    border: none;
-    padding: 12px 30px;
-    font-size: 16px;
-    font-weight: 600;
-    margin-top: 30px;
-    transition: all 0.3s ease;
+.resume-contact a:hover,
+.resume-contact a:focus {
+    color: var(--site-accent-strong);
 }
 
-#resume .btn-primary:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
+.resume-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 1.35rem;
 }
 
-/* ===============================
-   Full-width resume sections
-   =============================== */
+.resume-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.65fr) minmax(255px, 0.78fr);
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.resume-column {
+    display: grid;
+    gap: 1.25rem;
+}
+
 .resume-section {
-    padding-top: 30px;
-    /* space above each subsection */
-    padding-bottom: 30px;
-    /* space below each subsection */
-    padding-left: 0;
-    padding-right: 0;
+    padding: 1.45rem;
+    border: 1px solid var(--site-border);
+    border-radius: 1rem;
+    background: #fff;
+    box-shadow: 0 0.55rem 1.65rem rgba(11, 31, 52, 0.045);
 }
 
-.resume-section.bg-light {
-    background-color: #f8f9fa;
-}
-
-.resume-section.bg-white {
-    background-color: #ffffff;
-}
-
-/* Unified section headings */
-.resume-section h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 24px;
-    /* consistent size for all sections */
+.resume-section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin: 0 0 1rem;
+    color: var(--site-heading);
+    font-size: 0.92rem;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    line-height: 1.25;
     text-transform: uppercase;
-    color: #2c3e50;
-    letter-spacing: 1px;
-    margin-top: 0px;
-    margin-bottom: 25px;
-    border-bottom: 2px solid #e1e1e1;
-    padding-bottom: 8px;
 }
 
-/* List styling for resume sections */
-.resume-section ul {
-    list-style-type: none;
-    padding-left: 0;
-    margin-bottom: 0;
+.resume-section-title::before {
+    content: "";
+    width: 0.28rem;
+    height: 1.15rem;
+    border-radius: 999px;
+    background: var(--site-accent);
 }
 
-.resume-section ul li {
-    margin-bottom: 14px;
-    padding-left: 22px;
-    font-weight: 500;
-    color: #444;
-    position: relative;
+.resume-summary {
+    margin: 0;
+    color: var(--site-text);
+    line-height: 1.78;
 }
 
-.resume-section ul li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    top: 0.35em;
-    color: #198754;
-    font-size: 20px;
-    font-weight: bold;
+.resume-list,
+.resume-bullets {
+    margin: 0;
+    padding-left: 1.1rem;
 }
 
-/* Only target the company/subtitle under job/education */
-.resume-section .d-flex>div>p.text-muted {
-    font-size: 16px;
-    /* adjust size as needed */
-    font-weight: 600;
-    /* optional bold */
-    margin-bottom: 0;
-    /* optional to remove spacing */
-    color: #555;
-    /* override Bootstrap muted gray if needed */
+.resume-list li+li,
+.resume-bullets li+li {
+    margin-top: 0.45rem;
+}
+
+.resume-list li,
+.resume-bullets li,
+.resume-section p {
+    color: var(--site-text);
+    font-size: 0.92rem;
+    line-height: 1.72;
+}
+
+.resume-item+.resume-item {
+    margin-top: 1.45rem;
+    padding-top: 1.45rem;
+    border-top: 1px solid var(--site-border);
+}
+
+.resume-item-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.resume-item-title {
+    margin: 0;
+    color: var(--site-heading);
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1.35;
+}
+
+.resume-item-meta {
+    margin: 0.22rem 0 0;
+    color: var(--site-accent);
+    font-size: 0.84rem;
+    font-weight: 700;
+    line-height: 1.45;
 }
 
 .resume-date {
-    font-size: 16px;
-    /* control size here */
-    color: #555;
-    font-weight: 500;
+    flex: 0 0 auto;
+    color: var(--site-muted);
+    font-family: "Montserrat", system-ui, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-align: right;
+    white-space: nowrap;
 }
 
-#resume .university-name {
-    font-size: 17px;
-    font-weight: 500;
-    color: #6c757d;
+.resume-item>.resume-bullets {
+    margin-top: 0.7rem;
 }
 
-#resume .education-date {
-    font-size: 15px;
-    font-weight: 400;
-    color: #6c757d;
+.skill-group+.skill-group {
+    margin-top: 1rem;
 }
 
-
-/* Skills section specific tuning */
-.resume-section.bg-white ul li {
-    line-height: 1.6;
+.skill-group-title {
+    margin: 0;
+    color: var(--site-heading);
+    font-size: 0.78rem;
+    font-weight: 800;
+    line-height: 1.35;
 }
 
-/* Better spacing between two columns */
-.resume-section .row>div {
-    padding-right: 30px;
+.skill-group p {
+    margin: 0.3rem 0 0;
 }
 
-/* Better mobile stacking */
-@media (max-width: 768px) {
-    #resume {
-        padding: 50px 20px;
-    }
-
-    #resume h2 {
-        font-size: 28px;
-    }
-
-    #resume h4 {
-        font-size: 18px;
-    }
-
-    .resume-section h3 {
-        font-size: 20px;
-    }
-
-    .resume-section .col-md-6 {
-        margin-bottom: 10px;
-    }
+.resume-project+.resume-project {
+    margin-top: 1.1rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid var(--site-border);
 }
 
-#resume .container {
-    max-width: 1250px;
-    margin: 0 auto;
-    padding-left: 40px;
-    padding-right: 40px;
+.resume-project-title {
+    margin: 0;
+    color: var(--site-heading);
+    font-size: 0.95rem;
+    font-weight: 800;
+    line-height: 1.4;
 }
 
-.resume-section .mb-5,
-.resume-section .mb-4 {
-    width: 100%;
+.resume-project p {
+    margin: 0.3rem 0 0;
 }
 
-#contact .footer-inline {
+.resume-sidebar .resume-section {
+    background: #fbfcfd;
+}
+
+.resume-skill-cloud {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: baseline;
-    gap: 0.35rem;
-    min-width: 0;
+    gap: 0.45rem;
 }
 
-#contact .footer-inline-link {
-    min-width: 0;
+.resume-skill {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.9rem;
+    padding: 0.25rem 0.6rem;
+    border: 1px solid rgba(19, 139, 128, 0.22);
+    border-radius: 999px;
+    background: rgba(19, 139, 128, 0.07);
+    color: var(--site-heading);
+    font-size: 0.71rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.resume-detail-list {
+    margin: 0;
+}
+
+.resume-detail-row {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 0.75rem;
+    padding: 0.68rem 0;
+    border-bottom: 1px solid var(--site-border);
+}
+
+.resume-detail-row:first-child {
+    padding-top: 0;
+}
+
+.resume-detail-row:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.resume-label {
+    color: var(--site-muted);
+    font-size: 0.8rem;
+}
+
+.resume-value {
+    color: var(--site-heading);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-align: right;
+}
+
+.resume-links {
+    display: grid;
+    gap: 0.55rem;
+}
+
+.resume-link {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    color: var(--site-text);
+    font-size: 0.85rem;
+    text-decoration: none;
     overflow-wrap: anywhere;
-    word-break: break-word;
 }
 
-/* Keep it in one line only on very wide screens */
-@media (min-width: 1400px) {
-    #contact .footer-inline {
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        white-space: nowrap;
+.resume-link i {
+    width: 1.1rem;
+    color: var(--site-accent);
+    text-align: center;
+}
+
+.resume-link:hover,
+.resume-link:focus {
+    color: var(--site-accent-strong);
+}
+
+.back-to-top {
+    position: fixed;
+    right: 1.15rem;
+    bottom: 1.15rem;
+    z-index: 1030;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.8rem;
+    height: 2.8rem;
+    border: 1px solid rgba(11, 31, 52, 0.12);
+    border-radius: 50%;
+    background: #fff;
+    color: var(--site-heading);
+    box-shadow: 0 0.65rem 1.6rem rgba(11, 31, 52, 0.16);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(0.45rem);
+    transition: opacity 160ms ease, visibility 160ms ease, transform 160ms ease, background-color 160ms ease, color 160ms ease;
+    text-decoration: none;
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+    background: var(--site-accent);
+    color: #fff;
+    outline: none;
+}
+
+.back-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+@media (max-width: 991.98px) {
+    .resume-layout {
+        grid-template-columns: 1fr;
     }
 
-    #contact .footer-inline-link {
-        white-space: nowrap;
-        overflow-wrap: normal;
-        word-break: normal;
+    .resume-sidebar {
+        order: 2;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .resume-shell {
+        padding-block: 3rem 4.25rem;
+    }
+
+    .resume-section {
+        padding: 1.2rem;
+    }
+
+    .resume-item-head {
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .resume-date {
+        text-align: left;
+        white-space: normal;
+    }
+
+    .resume-detail-row {
+        grid-template-columns: 1fr;
+        gap: 0.2rem;
+    }
+
+    .resume-value {
+        text-align: left;
+    }
+}
+
+@media print {
+    html {
+        scroll-padding-top: 0;
+    }
+
+    body {
+        padding-top: 0;
+        background: #fff;
+    }
+
+    .navbar,
+    .back-to-top,
+    .resume-actions,
+    .site-footer,
+    .site-copyright,
+    .skip-link {
+        display: none !important;
+    }
+
+    .resume-shell {
+        padding: 0;
+    }
+
+    .resume-header-card,
+    .resume-section {
+        box-shadow: none;
+        break-inside: avoid;
+    }
+
+    .resume-layout {
+        grid-template-columns: minmax(0, 1fr) minmax(220px, 0.34fr);
+        gap: 1rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .back-to-top {
+        transition: none;
     }
 }
