@@ -1,76 +1,76 @@
-/*!
-* Start Bootstrap - Freelancer v7.0.7 (https://startbootstrap.com/theme/freelancer)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-freelancer/blob/master/LICENSE)
-*/
-//
-// Scripts
-// 
+/*
+ * scripts.js
+ * Shared navigation behavior across index.html, resume.html, and map.html.
+ */
 
-window.addEventListener('DOMContentLoaded', event => {
+document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.getElementById('mainNav');
+    const collapseElement = document.getElementById('navbarResponsive');
+    const toggler = document.querySelector('#mainNav .navbar-toggler');
 
-    // Navbar shrink function
-    var navbarShrink = function () {
-        const navbarCollapsible = document.body.querySelector('#mainNav');
-        if (!navbarCollapsible) {
-            return;
+    if (!navbar) return;
+
+    const syncNavbarHeight = () => {
+        const height = Math.ceil(navbar.getBoundingClientRect().height);
+        if (height > 0) {
+            document.documentElement.style.setProperty('--site-navbar-height', `${height}px`);
         }
-        if (window.scrollY === 0) {
-            navbarCollapsible.classList.remove('navbar-shrink')
-        } else {
-            navbarCollapsible.classList.add('navbar-shrink')
-        }
-
     };
 
-    // Shrink the navbar 
-    navbarShrink();
+    const shrinkNavbar = () => {
+        navbar.classList.toggle('navbar-shrink', window.scrollY > 12);
+    };
 
-    // Shrink the navbar when page is scrolled
-    document.addEventListener('scroll', navbarShrink);
+    const closeMobileNavbar = () => {
+        if (!collapseElement || !toggler || typeof bootstrap === 'undefined') return;
+        if (!collapseElement.classList.contains('show')) return;
+        bootstrap.Collapse.getOrCreateInstance(collapseElement).hide();
+    };
 
-    // Activate Bootstrap scrollspy on the main nav element
-    const mainNav = document.body.querySelector('#mainNav');
-    if (mainNav) {
-        new bootstrap.ScrollSpy(document.body, {
-            target: '#mainNav',
-            rootMargin: '0px 0px -40%',
+    syncNavbarHeight();
+    shrinkNavbar();
+
+    window.addEventListener('load', syncNavbarHeight, { passive: true });
+    window.addEventListener('resize', syncNavbarHeight, { passive: true });
+    window.addEventListener('scroll', shrinkNavbar, { passive: true });
+
+    if (collapseElement && toggler) {
+        collapseElement.addEventListener('shown.bs.collapse', syncNavbarHeight);
+        collapseElement.addEventListener('hidden.bs.collapse', syncNavbarHeight);
+
+        document.querySelectorAll('#navbarResponsive a.nav-link').forEach((link) => {
+            link.addEventListener('click', () => {
+                if (window.matchMedia('(max-width: 991.98px)').matches) {
+                    closeMobileNavbar();
+                }
+            });
         });
-    };
 
-    // Collapse responsive navbar when toggler is visible
-    const navbarToggler = document.body.querySelector('.navbar-toggler');
-    const responsiveNavItems = [].slice.call(
-        document.querySelectorAll('#navbarResponsive .nav-link:not(.dropdown-toggle)')
-    );
-    responsiveNavItems.map(function (responsiveNavItem) {
-        responsiveNavItem.addEventListener('click', () => {
-            if (window.getComputedStyle(navbarToggler).display !== 'none') {
-                navbarToggler.click();
+        document.addEventListener('click', (event) => {
+            if (!collapseElement.classList.contains('show')) return;
+            if (navbar.contains(event.target)) return;
+            closeMobileNavbar();
+        });
+
+        document.addEventListener('scroll', () => {
+            if (window.matchMedia('(max-width: 991.98px)').matches) {
+                closeMobileNavbar();
             }
+        }, { passive: true });
+    }
+
+    const sameDocumentSectionLinks = Array.from(
+        document.querySelectorAll('#mainNav a.nav-link[href^="#"]')
+    );
+
+    if (
+        sameDocumentSectionLinks.length > 0 &&
+        typeof bootstrap !== 'undefined' &&
+        bootstrap.ScrollSpy
+    ) {
+        bootstrap.ScrollSpy.getOrCreateInstance(document.body, {
+            target: '#mainNav',
+            rootMargin: '0px 0px -45%',
         });
-    });
-
-    // Auto close navbar when clicking outside
-    document.addEventListener('click', function (event) {
-        const navbarCollapse = document.querySelector('#navbarResponsive');
-        const navbarToggler = document.querySelector('.navbar-toggler');
-
-        const isClickInsideNavbar = navbarCollapse.contains(event.target);
-        const isClickOnToggler = navbarToggler.contains(event.target);
-
-        if (!isClickInsideNavbar && !isClickOnToggler && navbarCollapse.classList.contains('show')) {
-            new bootstrap.Collapse(navbarCollapse).hide();
-        }
-    });
-
-    document.addEventListener('scroll', function () {
-        const navbarCollapse = document.querySelector('#navbarResponsive');
-
-        if (navbarCollapse.classList.contains('show')) {
-            new bootstrap.Collapse(navbarCollapse).hide();
-        }
-    });
-
-
+    }
 });
