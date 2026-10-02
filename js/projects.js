@@ -1,858 +1,322 @@
-/* =========================================================
-   GIS PROJECTS
-   ========================================================= */
+/*
+ * projects.js
+ * Project data, rendering, filtering, and accessible case-study dialog.
+ */
 
-document.addEventListener("DOMContentLoaded", function () {
-
-    /*
-     * =======================================================
-     * PROJECT DATA
-     *
-     * Edit this section when you want to change a project.
-     * =======================================================
-     */
-
+document.addEventListener('DOMContentLoaded', () => {
     const projects = [
-
         {
-            id: "madrid-mobility",
-            title: "Madrid Mobility",
-            category: "Mobility",
-            filter: ["mobility"],
+            id: 'madrid-mobility',
+            title: 'Madrid Mobility',
+            category: 'Mobility',
+            filter: ['mobility'],
             featured: true,
-
-            summary:
-                "A GIS case study focused on urban mobility, spatial patterns, accessibility, and the geographic distribution of transportation-related activity in Madrid.",
-
-            problem:
-                "Explore a transportation and mobility question using geographic data to identify spatial patterns and support location-based interpretation.",
-
-            methods:
-                "GIS spatial analysis, thematic mapping, geographic data visualization, and web-based map presentation.",
-
-            outputs:
-                "Interactive mapping outputs designed to communicate mobility patterns and geographic relationships clearly.",
-
-            tags: [
-                "GIS",
-                "Spatial Analysis",
-                "Urban Mobility",
-                "Cartography"
-            ],
-
-            image:
-                "assets/img/projects/madrid-mobility.png",
-
-            visualClass:
-                "visual-madrid",
-
-            icon:
-                "fa-city",
-
-            github:
-                "",
-
-            live:
-                ""
+            summary: 'A reproducible GIS workflow using BiciMAD and EMT data to examine neighborhood accessibility, service coverage, and mobility gaps across Madrid.',
+            problem: 'Assess how transportation services relate to neighborhood-level access and identify geographic patterns that are difficult to see in tabular data alone.',
+            methods: 'Python, GeoPandas, Madrid Open Data, EMT stops and routes, BiciMAD, GeoJSON, CRS management, service-area buffering, and spatial overlays.',
+            outputs: 'Accessibility scores, district-level summaries, service-gap analysis, and map-ready outputs for communicating spatial patterns.',
+            tags: ['GIS', 'Python', 'GeoPandas', 'Urban Mobility'],
+            image: 'assets/img/projects/madrid-mobility.png',
+            visualClass: 'visual-madrid',
+            icon: 'fa-city',
+            github: '',
+            live: ''
         },
-
-
         {
-            id: "nyc-healthcare",
-            title: "NYC Healthcare Accessibility",
-            category: "Health",
-            filter: ["health", "accessibility"],
+            id: 'nyc-healthcare',
+            title: 'NYC Healthcare Accessibility',
+            category: 'Health',
+            filter: ['health', 'accessibility'],
             featured: false,
-
-            summary:
-                "A spatial analysis project examining healthcare accessibility and the geographic relationship between population needs and healthcare resources in New York City.",
-
-            problem:
-                "Investigate how healthcare resources are distributed geographically and identify patterns relevant to accessibility and spatial equity.",
-
-            methods:
-                "GIS network and proximity concepts, spatial analysis, thematic cartography, and geographic visualization.",
-
-            outputs:
-                "Map-based analysis communicating healthcare accessibility and geographic disparities.",
-
-            tags: [
-                "GIS",
-                "Health",
-                "Accessibility",
-                "Spatial Analysis"
-            ],
-
-            image:
-                "assets/img/projects/nyc-healthcare.png",
-
-            visualClass:
-                "visual-nyc",
-
-            icon:
-                "fa-hospital",
-
-            github:
-                "",
-
-            live:
-                ""
+            summary: 'A spatial analysis of healthcare accessibility in New York City, connecting population needs with the geographic distribution of healthcare resources.',
+            problem: 'Identify underserved areas and explore where healthcare resources and population demand do not align geographically.',
+            methods: 'ArcGIS API for Python, GeoPandas, pandas, NumPy, ACS Summary Files, TIGER/Line data, spatial classification, and candidate-site analysis.',
+            outputs: 'Coverage indicators, underserved-tract classifications, candidate facility locations, and reusable GIS data exports.',
+            tags: ['GIS', 'Healthcare', 'Accessibility', 'Python'],
+            image: 'assets/img/projects/nyc-healthcare.png',
+            visualClass: 'visual-nyc',
+            icon: 'fa-hospital',
+            github: '',
+            live: ''
         },
-
-
         {
-            id: "flood-exposure",
-            title: "Flood Exposure Mapping",
-            category: "Risk & Resilience",
-            filter: ["risk"],
+            id: 'flood-exposure',
+            title: 'Flood Exposure Mapping',
+            category: 'Risk & Resilience',
+            filter: ['risk'],
             featured: false,
-
-            summary:
-                "A GIS project exploring flood exposure through spatial overlay, geographic visualization, and analysis of areas affected by flood risk.",
-
-            problem:
-                "Understand where flood hazards intersect with people, infrastructure, land use, or other geographic features of interest.",
-
-            methods:
-                "Spatial overlay, hazard mapping, thematic cartography, and geographic visualization.",
-
-            outputs:
-                "Flood exposure maps designed to support interpretation of geographic risk and potential impacts.",
-
-            tags: [
-                "GIS",
-                "Flood Risk",
-                "Spatial Analysis",
-                "Resilience"
-            ],
-
-            image:
-                "assets/img/projects/flood-exposure.png",
-
-            visualClass:
-                "visual-flood",
-
-            icon:
-                "fa-water",
-
-            github:
-                "",
-
-            live:
-                ""
+            summary: 'A geospatial risk workflow using flood layers, buffers, and spatial intersections to identify buildings and locations exposed to flooding.',
+            problem: 'Understand where flood hazards intersect with buildings and other geographic assets to support consistent exposure screening.',
+            methods: 'Python, GeoPandas, Shapely, GeoJSON, projected CRS, 100 m / 250 m / 500 m buffers, clipping, intersections, and spatial joins.',
+            outputs: 'Exposure bands, at-risk building datasets, and cartographic outputs suitable for risk screening and downstream analysis.',
+            tags: ['GIS', 'Python', 'Flood Risk', 'Shapely'],
+            image: 'assets/img/projects/flood-exposure.png',
+            visualClass: 'visual-flood',
+            icon: 'fa-water',
+            github: '',
+            live: ''
         },
-
-
         {
-            id: "spain-healthcare",
-            title: "Spain Healthcare Accessibility",
-            category: "Health",
-            filter: ["health", "accessibility"],
+            id: 'spain-healthcare',
+            title: 'Spain Healthcare Accessibility',
+            category: 'Health',
+            filter: ['health', 'accessibility'],
             featured: false,
-
-            summary:
-                "A geographic analysis of healthcare accessibility in Spain, examining how healthcare resources relate to population distribution and geographic access.",
-
-            problem:
-                "Explore regional patterns in healthcare availability and the geographic factors that influence accessibility.",
-
-            methods:
-                "Spatial analysis, demographic mapping, accessibility analysis, and thematic cartography.",
-
-            outputs:
-                "Maps and geographic analyses that communicate healthcare accessibility across Spanish regions.",
-
-            tags: [
-                "GIS",
-                "Healthcare",
-                "Accessibility",
-                "Spain"
-            ],
-
-            image:
-                "assets/img/projects/spain-healthcare.png",
-
-            visualClass:
-                "visual-spain",
-
-            icon:
-                "fa-heart-pulse",
-
-            github:
-                "",
-
-            live:
-                ""
+            summary: 'A reusable geospatial data workflow for healthcare accessibility analysis across Spain using public services, demographic indicators, and standardized GIS outputs.',
+            problem: 'Build a repeatable process for combining public geospatial services and demographic indicators into comparable municipal-level accessibility measures.',
+            methods: 'Python, WFS, IGN/CNIG, sigMayores, INE, GeoPackage, CSV, data cleaning, indicator construction, joins, and interactive HTML mapping.',
+            outputs: 'Standardized CSV and GeoPackage datasets, municipal indicators, hotspot mapping, and an interactive vulnerability map.',
+            tags: ['GIS', 'Healthcare', 'WFS', 'Python'],
+            image: 'assets/img/projects/spain-healthcare.png',
+            visualClass: 'visual-spain',
+            icon: 'fa-heart-pulse',
+            github: '',
+            live: ''
         },
-
-
         {
-            id: "harris-flood",
-            title: "Harris County Flood Risk & Social Vulnerability",
-            category: "Risk & Resilience",
-            filter: ["risk", "accessibility", "python"],
+            id: 'harris-flood',
+            title: 'Harris County Flood Risk & Social Vulnerability',
+            category: 'Risk & Resilience',
+            filter: ['risk', 'accessibility', 'python'],
             featured: false,
-
-            summary:
-                "A GIS risk-analysis project combining flood exposure with social vulnerability to better understand where hazards and community-level vulnerability overlap.",
-
-            problem:
-                "Identify areas where flood risk intersects with social vulnerability so that geographic patterns of potential impact can be interpreted together rather than independently.",
-
-            methods:
-                "Weighted spatial analysis, social vulnerability mapping, flood-risk analysis, GIS visualization, and Python-assisted geospatial workflows.",
-
-            outputs:
-                "Composite geographic risk analysis communicating the relationship between environmental hazard and social vulnerability.",
-
-            tags: [
-                "GIS",
-                "Flood Risk",
-                "Social Vulnerability",
-                "Python",
-                "Resilience"
-            ],
-
-            image:
-                "assets/img/projects/harris-flood.png",
-
-            visualClass:
-                "visual-harris",
-
-            icon:
-                "fa-house-flood-water",
-
-            github:
-                "",
-
-            live:
-                ""
+            summary: 'A composite GIS risk analysis combining flood exposure, social vulnerability, and evacuation difficulty to interpret where hazard and community vulnerability overlap.',
+            problem: 'Examine environmental hazard and community vulnerability together so that spatial priorities are not interpreted from a single layer in isolation.',
+            methods: 'QGIS, FEMA flood hazard polygons, ACS 5-Year Estimates, census tracts, weighted spatial scoring, Python-assisted workflows, and ArcGIS StoryMaps.',
+            outputs: 'A weighted Final Priority Index and StoryMap-ready analysis communicating geographic patterns of potential flood impact.',
+            tags: ['GIS', 'Flood Risk', 'Social Vulnerability', 'Python'],
+            image: 'assets/img/projects/harris-flood.png',
+            visualClass: 'visual-harris',
+            icon: 'fa-house-flood-water',
+            github: '',
+            live: ''
         }
-
     ];
 
+    const grid = document.getElementById('projects-grid');
+    const featured = document.getElementById('featured-project');
+    const filters = Array.from(document.querySelectorAll('.project-filter'));
 
-    /*
-     * =======================================================
-     * ELEMENTS
-     * =======================================================
-     */
+    const modal = document.getElementById('projectModal');
+    if (!grid || !featured || !modal) return;
 
-    const projectsGrid =
-        document.getElementById("projects-grid");
+    const modalDialog = modal.querySelector('.project-modal-dialog');
+    const modalBackdrop = modal.querySelector('.project-modal-backdrop');
+    const modalClose = document.getElementById('projectModalClose');
+    const modalVisual = document.getElementById('projectModalVisual');
+    const modalCategory = document.getElementById('projectModalCategory');
+    const modalTitle = document.getElementById('projectModalTitle');
+    const modalSummary = document.getElementById('projectModalSummary');
+    const modalProblem = document.getElementById('projectModalProblem');
+    const modalMethods = document.getElementById('projectModalMethods');
+    const modalOutputs = document.getElementById('projectModalOutputs');
+    const modalTags = document.getElementById('projectModalTags');
+    const modalActions = document.getElementById('projectModalActions');
 
-    const featuredProject =
-        document.getElementById("featured-project");
+    let lastFocusedElement = null;
 
-    const filterButtons =
-        document.querySelectorAll(".project-filter");
+    const escapeHtml = (value) => String(value ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
 
-    const modal =
-        document.getElementById("projectModal");
+    const tagMarkup = (tags) => tags.map((tag) => (
+        `<span class="project-tag">${escapeHtml(tag)}</span>`
+    )).join('');
 
-    const modalBackdrop =
-        document.querySelector(".project-modal-backdrop");
-
-    const modalClose =
-        document.getElementById("projectModalClose");
-
-    const modalVisual =
-        document.getElementById("projectModalVisual");
-
-    const modalCategory =
-        document.getElementById("projectModalCategory");
-
-    const modalTitle =
-        document.getElementById("projectModalTitle");
-
-    const modalSummary =
-        document.getElementById("projectModalSummary");
-
-    const modalProblem =
-        document.getElementById("projectModalProblem");
-
-    const modalMethods =
-        document.getElementById("projectModalMethods");
-
-    const modalOutputs =
-        document.getElementById("projectModalOutputs");
-
-    const modalTags =
-        document.getElementById("projectModalTags");
-
-    const modalActions =
-        document.getElementById("projectModalActions");
-
-
-    /*
-     * =======================================================
-     * HELPERS
-     * =======================================================
-     */
-
-    function escapeHtml(value) {
-
-        return String(value)
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#039;");
-
-    }
-
-
-    function tagMarkup(tags) {
-
-        return tags
-            .map(function (tag) {
-                return `
-                    <span class="project-tag">
-                        ${escapeHtml(tag)}
-                    </span>
-                `;
-            })
-            .join("");
-
-    }
-
-
-    function imageMarkup(project) {
-
+    const imageMarkup = (project, loading = 'lazy') => {
         if (!project.image) {
-
-            return `
-                <div class="project-image-placeholder">
-                    <div>
-                        <i class="fas ${escapeHtml(project.icon)}"></i>
-                        <strong>
-                            ${escapeHtml(project.title)}
-                        </strong>
-                    </div>
-                </div>
-            `;
-
+            return `<div class="project-image-placeholder"><div><i class="fa-solid ${escapeHtml(project.icon)}" aria-hidden="true"></i><strong>${escapeHtml(project.title)}</strong></div></div>`;
         }
 
         return `
-            <img
-                src="${escapeHtml(project.image)}"
-                alt="${escapeHtml(project.title)} project map"
-                loading="lazy"
-                onerror="
-                    this.style.display='none';
-                    this.nextElementSibling.style.display='flex';
-                "
-            >
-
-            <div
-                class="project-image-placeholder"
-                style="display:none;"
-            >
-                <div>
-                    <i class="fas ${escapeHtml(project.icon)}"></i>
-                    <strong>
-                        ${escapeHtml(project.title)}
-                    </strong>
-                </div>
-            </div>
-        `;
-
-    }
-
-
-    /*
-     * =======================================================
-     * FEATURED PROJECT
-     * =======================================================
-     */
-
-    function renderFeaturedProject() {
-
-        if (!featuredProject) {
-            return;
-        }
-
-        const project =
-            projects.find(function (item) {
-                return item.featured === true;
-            });
-
-        if (!project) {
-            return;
-        }
-
-
-        featuredProject.innerHTML = `
-
-            <article class="featured-project">
-
-                <div class="featured-project-inner">
-
-                    <div
-                        class="featured-project-visual ${escapeHtml(project.visualClass)}"
-                    >
-                        ${imageMarkup(project)}
-                    </div>
-
-
-                    <div class="featured-project-content">
-
-                        <span class="featured-label">
-                            <i
-                                class="fas fa-star"
-                                aria-hidden="true"
-                            ></i>
-
-                            Featured Case Study
-                        </span>
-
-
-                        <h3>
-                            ${escapeHtml(project.title)}
-                        </h3>
-
-
-                        <p>
-                            ${escapeHtml(project.summary)}
-                        </p>
-
-
-                        <div class="featured-meta">
-                            ${tagMarkup(project.tags)}
-                        </div>
-
-
-                        <div class="project-card-actions">
-
-                            <button
-                                type="button"
-                                class="project-card-button primary"
-                                data-project-id="${escapeHtml(project.id)}"
-                            >
-                                <i
-                                    class="fas fa-arrow-up-right-from-square me-1"
-                                    aria-hidden="true"
-                                ></i>
-
-                                View Case Study
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </article>
-        `;
-
-    }
-
-
-    /*
-     * =======================================================
-     * PROJECT GRID
-     * =======================================================
-     */
-
-    function renderProjects(filter) {
-
-        if (!projectsGrid) {
-            return;
-        }
-
-
-        const filteredProjects =
-            projects.filter(function (project) {
-
-                if (project.featured) {
-                    return false;
-                }
-
-                if (filter === "all") {
-                    return true;
-                }
-
-                return project.filter.includes(filter);
-
-            });
-
-
-        if (filteredProjects.length === 0) {
-
-            projectsGrid.innerHTML = `
-                <div class="col-12">
-
-                    <div class="text-center py-5">
-
-                        <p class="mb-0 text-muted">
-                            No projects are currently assigned
-                            to this category.
-                        </p>
-
-                    </div>
-
-                </div>
-            `;
-
-            return;
-        }
-
-
-        projectsGrid.innerHTML =
-            filteredProjects
-                .map(function (project) {
-
-                    return `
-
-                        <div class="col-md-6 col-xl-4">
-
-                            <article
-                                class="project-card"
-                            >
-
-                                <div
-                                    class="project-card-visual ${escapeHtml(project.visualClass)}"
-                                >
-                                    ${imageMarkup(project)}
-
-                                    <div
-                                        class="project-card-visual-title"
-                                    >
-                                        ${escapeHtml(project.title)}
-                                    </div>
-
-                                </div>
-
-
-                                <div class="project-card-body">
-
-                                    <div
-                                        class="project-card-category"
-                                    >
-                                        ${escapeHtml(project.category)}
-                                    </div>
-
-
-                                    <h3 class="project-card-title">
-                                        ${escapeHtml(project.title)}
-                                    </h3>
-
-
-                                    <p class="project-card-summary">
-                                        ${escapeHtml(project.summary)}
-                                    </p>
-
-
-                                    <div class="project-tags">
-                                        ${tagMarkup(project.tags)}
-                                    </div>
-
-
-                                    <div class="project-card-actions">
-
-                                        <button
-                                            type="button"
-                                            class="project-card-button primary"
-                                            data-project-id="${escapeHtml(project.id)}"
-                                        >
-                                            View Case Study
-                                        </button>
-
-                                    </div>
-
-                                </div>
-
-                            </article>
-
-                        </div>
-                    `;
-
-                })
-                .join("");
-
-    }
-
-
-    /*
-     * =======================================================
-     * OPEN MODAL
-     * =======================================================
-     */
-
-    function openProjectModal(projectId) {
-
-        const project =
-            projects.find(function (item) {
-                return item.id === projectId;
-            });
-
-        if (!project || !modal) {
-            return;
-        }
-
-
-        modalCategory.textContent =
-            project.category;
-
-        modalTitle.textContent =
-            project.title;
-
-        modalSummary.textContent =
-            project.summary;
-
-        modalProblem.textContent =
-            project.problem;
-
-        modalMethods.textContent =
-            project.methods;
-
-        modalOutputs.textContent =
-            project.outputs;
-
-
-        modalTags.innerHTML =
-            tagMarkup(project.tags);
-
-
-        modalVisual.className =
-            "project-modal-visual " +
-            project.visualClass;
-
-        modalVisual.innerHTML =
-            imageMarkup(project);
-
-
-        let actions = `
-            <button
-                type="button"
-                class="project-card-button secondary"
-                id="modalCloseAction"
-            >
-                Close
-            </button>
-        `;
-
-
+      <img src="${escapeHtml(project.image)}" alt="${escapeHtml(project.title)} project map" loading="${loading}" decoding="async">
+      <div class="project-image-placeholder" hidden>
+        <div><i class="fa-solid ${escapeHtml(project.icon)}" aria-hidden="true"></i><strong>${escapeHtml(project.title)}</strong></div>
+      </div>
+    `;
+    };
+
+    const attachImageFallback = (root) => {
+        const image = root?.querySelector('img');
+        const fallback = root?.querySelector('.project-image-placeholder[hidden]');
+        if (!image || !fallback) return;
+        image.addEventListener('error', () => {
+            image.hidden = true;
+            fallback.hidden = false;
+        }, { once: true });
+    };
+
+    const setPageInert = (state) => {
+        Array.from(document.body.children).forEach((child) => {
+            if (child !== modal && 'inert' in child) child.inert = state;
+        });
+    };
+
+    const focusableSelector = [
+        'button:not([disabled])',
+        'a[href]',
+        'input:not([disabled])',
+        'select:not([disabled])',
+        'textarea:not([disabled])',
+        '[tabindex]:not([tabindex="-1"])'
+    ].join(',');
+
+    const getFocusable = () => Array.from(modal.querySelectorAll(focusableSelector));
+
+    const closeModal = () => {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('project-modal-open');
+        setPageInert(false);
+        const previous = lastFocusedElement;
+        lastFocusedElement = null;
+        previous?.focus?.();
+    };
+
+    const openModal = (projectId, trigger) => {
+        const project = projects.find((item) => item.id === projectId);
+        if (!project) return;
+
+        lastFocusedElement = trigger instanceof HTMLElement ? trigger : document.activeElement;
+
+        modalCategory.textContent = project.category;
+        modalTitle.textContent = project.title;
+        modalSummary.textContent = project.summary;
+        modalProblem.textContent = project.problem;
+        modalMethods.textContent = project.methods;
+        modalOutputs.textContent = project.outputs;
+        modalTags.innerHTML = tagMarkup(project.tags);
+        modalVisual.className = `project-modal-visual ${escapeHtml(project.visualClass)}`;
+        modalVisual.innerHTML = imageMarkup(project, 'eager');
+        attachImageFallback(modalVisual);
+
+        const links = [];
         if (project.live) {
-
-            actions = `
-                <a
-                    class="project-card-button primary"
-                    href="${escapeHtml(project.live)}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <i
-                        class="fas fa-map-location-dot me-1"
-                        aria-hidden="true"
-                    ></i>
-
-                    View Interactive Map
-                </a>
-
-                ${project.github ? `
-                    <a
-                        class="project-card-button secondary"
-                        href="${escapeHtml(project.github)}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <i
-                            class="fab fa-github me-1"
-                            aria-hidden="true"
-                        ></i>
-
-                        GitHub
-                    </a>
-                ` : ""}
-
-                <button
-                    type="button"
-                    class="project-card-button secondary"
-                    id="modalCloseAction"
-                >
-                    Close
-                </button>
-            `;
-
-        } else if (project.github) {
-
-            actions = `
-                <a
-                    class="project-card-button secondary"
-                    href="${escapeHtml(project.github)}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <i
-                        class="fab fa-github me-1"
-                        aria-hidden="true"
-                    ></i>
-
-                    GitHub
-                </a>
-
-                <button
-                    type="button"
-                    class="project-card-button secondary"
-                    id="modalCloseAction"
-                >
-                    Close
-                </button>
-            `;
-
+            links.push(`<a class="project-card-button primary" href="${escapeHtml(project.live)}" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-map-location-dot me-1" aria-hidden="true"></i>View Interactive Map</a>`);
         }
-
-
-        modalActions.innerHTML =
-            actions;
-
-
-        modal.classList.add("is-open");
-
-        modal.setAttribute("aria-hidden", "false");
-
-        document.body.classList.add("project-modal-open");
-
-        modalClose.focus();
-
-
-        const closeAction =
-            document.getElementById("modalCloseAction");
-
-        if (closeAction) {
-
-            closeAction.addEventListener(
-                "click",
-                closeProjectModal
-            );
-
+        if (project.github) {
+            links.push(`<a class="project-card-button secondary" href="${escapeHtml(project.github)}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github me-1" aria-hidden="true"></i>GitHub</a>`);
         }
+        links.push('<button type="button" class="project-card-button secondary" id="modalCloseAction">Close</button>');
+        modalActions.innerHTML = links.join('');
 
-    }
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('project-modal-open');
+        setPageInert(true);
 
+        document.getElementById('modalCloseAction')?.addEventListener('click', closeModal);
+        modalDialog?.focus();
+    };
 
-    /*
-     * =======================================================
-     * CLOSE MODAL
-     * =======================================================
-     */
+    const renderFeatured = () => {
+        const project = projects.find((item) => item.featured);
+        if (!project) return;
 
-    function closeProjectModal() {
+        featured.innerHTML = `
+      <article class="featured-project">
+        <div class="featured-project-inner">
+          <div class="featured-project-visual ${escapeHtml(project.visualClass)}">${imageMarkup(project, 'eager')}</div>
+          <div class="featured-project-content">
+            <span class="featured-label"><i class="fa-solid fa-star" aria-hidden="true"></i>Featured Case Study</span>
+            <h3>${escapeHtml(project.title)}</h3>
+            <p>${escapeHtml(project.summary)}</p>
+            <div class="featured-meta"><div class="project-tags">${tagMarkup(project.tags)}</div></div>
+            <div class="project-card-actions">
+              <button type="button" class="project-card-button primary" data-project-id="${escapeHtml(project.id)}" aria-haspopup="dialog" aria-controls="projectModal">View Case Study</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    `;
+        attachImageFallback(featured);
+    };
 
-        if (!modal) {
+    const renderProjects = (filter = 'all') => {
+        const filtered = projects.filter((project) => {
+            if (project.featured) return false;
+            return filter === 'all' || project.filter.includes(filter);
+        });
+
+        if (!filtered.length) {
+            grid.innerHTML = '<div class="col-12"><div class="py-5 text-center"><p class="mb-0 text-muted">No projects are currently assigned to this category.</p></div></div>';
             return;
         }
 
-        modal.classList.remove("is-open");
+        grid.innerHTML = filtered.map((project) => `
+      <div class="col-md-6 col-xl-4">
+        <article class="project-card">
+          <div class="project-card-visual ${escapeHtml(project.visualClass)}">
+            ${imageMarkup(project)}
+            <div class="project-card-visual-title">${escapeHtml(project.title)}</div>
+          </div>
+          <div class="project-card-body">
+            <div class="project-card-category">${escapeHtml(project.category)}</div>
+            <h3 class="project-card-title">${escapeHtml(project.title)}</h3>
+            <p class="project-card-summary">${escapeHtml(project.summary)}</p>
+            <div class="project-tags">${tagMarkup(project.tags)}</div>
+            <div class="project-card-actions">
+              <button type="button" class="project-card-button primary" data-project-id="${escapeHtml(project.id)}" aria-haspopup="dialog" aria-controls="projectModal">View Case Study</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    `).join('');
 
-        modal.setAttribute("aria-hidden", "true");
+        grid.querySelectorAll('.project-card-visual').forEach(attachImageFallback);
+    };
 
-        document.body.classList.remove("project-modal-open");
-
-    }
-
-
-    /*
-     * =======================================================
-     * EVENT HANDLING
-     * =======================================================
-     */
-
-    document.addEventListener("click", function (event) {
-
-        const projectButton =
-            event.target.closest(
-                "[data-project-id]"
-            );
-
-        if (projectButton) {
-
-            openProjectModal(
-                projectButton.dataset.projectId
-            );
-
-        }
-
+    document.addEventListener('click', (event) => {
+        const trigger = event.target.closest('[data-project-id]');
+        if (!trigger) return;
+        openModal(trigger.dataset.projectId, trigger);
     });
 
+    modalClose?.addEventListener('click', closeModal);
+    modalBackdrop?.addEventListener('click', closeModal);
 
-    if (modalClose) {
+    document.addEventListener('keydown', (event) => {
+        if (!modal.classList.contains('is-open')) return;
 
-        modalClose.addEventListener(
-            "click",
-            closeProjectModal
-        );
-
-    }
-
-
-    if (modalBackdrop) {
-
-        modalBackdrop.addEventListener(
-            "click",
-            closeProjectModal
-        );
-
-    }
-
-
-    document.addEventListener(
-        "keydown",
-        function (event) {
-
-            if (
-                event.key === "Escape" &&
-                modal &&
-                modal.classList.contains("is-open")
-            ) {
-
-                closeProjectModal();
-
-            }
-
+        if (event.key === 'Escape') {
+            event.preventDefault();
+            closeModal();
+            return;
         }
-    );
 
+        if (event.key !== 'Tab') return;
+        const focusables = getFocusable();
+        if (!focusables.length) {
+            event.preventDefault();
+            modalDialog?.focus();
+            return;
+        }
 
-    /*
-     * =======================================================
-     * FILTER EVENTS
-     * =======================================================
-     */
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
 
-    filterButtons.forEach(function (button) {
-
-        button.addEventListener(
-            "click",
-            function () {
-
-                filterButtons.forEach(function (item) {
-                    item.classList.remove("active");
-                });
-
-                button.classList.add("active");
-
-                renderProjects(
-                    button.dataset.filter
-                );
-
-            }
-        );
-
+        if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+        }
     });
 
+    filters.forEach((button) => {
+        button.addEventListener('click', () => {
+            filters.forEach((item) => {
+                const isActive = item === button;
+                item.classList.toggle('active', isActive);
+                item.setAttribute('aria-pressed', String(isActive));
+            });
+            renderProjects(button.dataset.filter || 'all');
+        });
+    });
 
-    /*
-     * =======================================================
-     * INITIAL RENDER
-     * =======================================================
-     */
-
-    renderFeaturedProject();
-
-    renderProjects("all");
-
+    renderFeatured();
+    renderProjects('all');
 });
