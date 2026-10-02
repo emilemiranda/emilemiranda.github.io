@@ -1,1292 +1,312 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="EM — Geospatial Data Analyst and GIS Developer portfolio featuring spatial analysis, geospatial data workflows, cartography, web mapping, and a live interactive map.">
+  <meta name="author" content="Emile B Miranda">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    >
+  <title>EM — Geospatial Data Analyst & Developer | GIS Portfolio</title>
 
-    <meta
-        name="description"
-        content="Emile Miranda — GIS portfolio: spatial analysis, cartography, web maps, IoT, AI and geospatial solutions."
-    >
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
-    <meta name="author" content="Emile Miranda">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800|Lato:400,400italic,700,700italic" rel="stylesheet">
 
-    <title>Emile Miranda — GIS Portfolio</title>
+  <!-- Bootstrap 5.2.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Skip link -->
-    <style>
-        .skip-link {
-            position: absolute;
-            left: -999px;
-            top: auto;
-            width: 1px;
-            height: 1px;
-            overflow: hidden;
-        }
+  <!-- Font Awesome 6.3.0 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet">
 
-        .skip-link:focus,
-        .skip-link:active {
-            left: 10px;
-            top: 10px;
-            width: auto;
-            height: auto;
-            background: #fff;
-            color: #000;
-            padding: 8px 12px;
-            z-index: 9999;
-            border-radius: 4px;
-            text-decoration: none;
-        }
-    </style>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
-
-    <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-
-    <!-- Font Awesome -->
-    <script
-        defer
-        src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
-        crossorigin="anonymous"
-    ></script>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
-        rel="stylesheet"
-        type="text/css"
-    >
-
-    <link
-        href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
-        rel="stylesheet"
-        type="text/css"
-    >
-
-    <!-- Core theme CSS -->
-    <link href="css/styles.css" rel="stylesheet">
-
-    <!-- GIS Projects CSS -->
-    <link href="css/projects.css" rel="stylesheet">
+  <!-- Site CSS -->
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/projects.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
-
-    <!-- Skip to main content -->
-    <a class="skip-link" href="#main">Skip to main content</a>
-
-    <!-- ========================================================= -->
-    <!-- Navigation -->
-    <!-- ========================================================= -->
-
-    <nav
-        class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top"
-        id="mainNav"
-        aria-label="Primary"
-    >
-        <div class="container">
-
-            <!-- Brand -->
-            <a
-                class="navbar-brand d-flex align-items-center"
-                href="index.html"
-            >
-                <span class="name-first">Emile</span>
-
-                <span class="name-middle">
-                    B
-                    <span class="custom-icon" aria-hidden="true">
-                        <i class="far fa-compass"></i>
-                    </span>
-                </span>
-
-                <span class="name-last">Miranda</span>
-            </a>
-
-            <!-- Mobile menu -->
-            <button
-                class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarResponsive"
-                aria-controls="navbarResponsive"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <strong>Menu</strong>
-                <i class="fas fa-bars" aria-hidden="true"></i>
-            </button>
-
-            <!-- Nav links -->
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-
-                <ul class="navbar-nav ms-auto">
-
-                    <!-- GIS Portfolio -->
-                    <li class="nav-item dropdown mx-0 mx-lg-1">
-
-                        <a
-                            class="nav-link dropdown-toggle py-3 px-0 px-lg-3 rounded"
-                            href="#portfolio"
-                            id="portfolioDropdown"
-                            role="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                            aria-haspopup="true"
-                        >
-                            GIS Portfolio
-                        </a>
-
-                        <ul
-                            class="dropdown-menu dropdown-menu-end"
-                            aria-labelledby="portfolioDropdown"
-                        >
-                            <li>
-                                <a
-                                    class="dropdown-item"
-                                    href="#spatial-analysis"
-                                >
-                                    Spatial Analysis
-                                </a>
-                            </li>
-
-                            <li>
-                                <a
-                                    class="dropdown-item"
-                                    href="#cartography"
-                                >
-                                    Cartography
-                                </a>
-                            </li>
-
-                            <li>
-                                <a
-                                    class="dropdown-item"
-                                    href="#web-maps"
-                                >
-                                    Web Maps
-                                </a>
-                            </li>
-                        </ul>
-
-                    </li>
-
-                    <!-- Projects -->
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a
-                            class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="#projects-title"
-                        >
-                            Projects
-                        </a>
-                    </li>
-
-                    <!-- About -->
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a
-                            class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="#about"
-                        >
-                            About
-                        </a>
-                    </li>
-
-                     <!-- Contact -->
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a
-                            class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="#contact"
-                        >
-                            Contact
-                        </a>
-                    </li>
-
-                    <!-- Resume -->
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a
-                            class="nav-link py-3 px-0 px-lg-3 rounded fw-bold"
-                            href="resume.html"
-                        >
-                            Resume
-                        </a>
-                    </li>
-
-                    <!-- Live Map -->
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a
-                            class="nav-link py-3 px-0 px-lg-3 rounded fw-bold"
-                            href="map.html"
-                        >
-                            Live Map
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-
-    <main id="main" tabindex="-1">
-
-        <!-- ========================================================= -->
-        <!-- Masthead -->
-        <!-- ========================================================= -->
-
-        <header class="masthead masthead-index text-white text-center">
-            <div class="container d-flex align-items-center flex-column">
-
-                <h1 class="masthead-heading text-uppercase mb-0">
-                    GIS PORTFOLIO
-                </h1>
-
-                <p class="masthead-subheading font-weight-light mb-0">
-                    Spatial Analysis - Cartography - Web Maps
-                </p>
-
-            </div>
-        </header>
-
-
-        <!-- ========================================================= -->
-        <!-- Existing GIS Portfolio -->
-        <!-- ========================================================= -->
-
-        <section
-            class="page-section portfolio"
-            id="portfolio"
-        >
-            <div class="container">
-
-                <!-- ================= Spatial Analysis ================= -->
-
-                <div
-                    class="portfolio-category spatial-analysis"
-                    id="spatial-analysis"
-                >
-
-                    <div class="section-heading-bar text-center">
-
-                        <h2
-                            class="page-section-heading text-secondary mb-1"
-                        >
-                            Spatial Analysis
-                        </h2>
-
-                        <div class="divider-custom mt-0">
-
-                            <div class="divider-custom-icon">
-                                <i
-                                    class="fa-solid fa-earth-europe"
-                                    aria-hidden="true"
-                                ></i>
-                            </div>
-
-                        </div>
-                    </div>
-
-
-                    <div class="row justify-content-center">
-
-                        <!-- Item 1 -->
-                        <div class="col-md-6 col-lg-4 mb-5">
-
-                            <a
-                                href="https://storymaps.arcgis.com/stories/682c7a6d2ab7480ab8db41b22688c5e7"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="text-decoration-none"
-                            >
-
-                                <div class="portfolio-item mx-auto">
-
-                                    <div
-                                        class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-                                    >
-
-                                        <div
-                                            class="portfolio-item-caption-content text-center text-white"
-                                        >
-                                            <i
-                                                class="fas fa-globe mb-2"
-                                                aria-hidden="true"
-                                            ></i>
-
-                                            <h5 class="portfolio-item-title">
-                                                Farmers Market Food Access
-                                            </h5>
-                                        </div>
-
-                                    </div>
-
-                                    <img
-                                        class="img-fluid"
-                                        src="assets/img/portfolio/farmers.png"
-                                        alt="Farmers Market Food Access storymap thumbnail"
-                                        loading="lazy"
-                                    >
-
-                                </div>
-
-                            </a>
-
-                        </div>
-
-
-                        <!-- Item 2 -->
-                        <div class="col-md-6 col-lg-4 mb-5">
-
-                            <a
-                                href="https://www.arcgis.com/home/webscene/viewer.html?webscene=89102fa2d3ce4f7587a37cea4a61788d"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="text-decoration-none"
-                            >
-
-                                <div class="portfolio-item mx-auto">
-
-                                    <div
-                                        class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-                                    >
-                                        <div
-                                            class="portfolio-item-caption-content text-center text-white"
-                                        >
-                                            <i
-                                                class="fas fa-globe mb-2"
-                                                aria-hidden="true"
-                                            ></i>
-
-                                            <h5 class="portfolio-item-title">
-                                                Christchurch Earthquake, 2011
-                                            </h5>
-                                        </div>
-                                    </div>
-
-                                    <img
-                                        class="img-fluid"
-                                        src="assets/img/portfolio/earth.png"
-                                        alt="Christchurch Earthquake 2011 webscene thumbnail"
-                                        loading="lazy"
-                                    >
-
-                                </div>
-
-                            </a>
-
-                        </div>
-
-
-                        <!-- Item 3 -->
-                        <div class="col-md-6 col-lg-4 mb-5">
-
-                            <a
-                                href="https://www.arcgis.com/home/webscene/viewer.html?webscene=d9edbe52adae450693e33e7bb7190a80"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="text-decoration-none"
-                            >
-
-                                <div class="portfolio-item mx-auto">
-
-                                    <div
-                                        class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-                                    >
-                                        <div
-                                            class="portfolio-item-caption-content text-center text-white"
-                                        >
-                                            <i
-                                                class="fas fa-globe mb-2"
-                                                aria-hidden="true"
-                                            ></i>
-
-                                            <h5 class="portfolio-item-title">
-                                                City of Miami Beach Sea Level Rise
-                                            </h5>
-                                        </div>
-                                    </div>
-
-                                    <img
-                                        class="img-fluid"
-                                        src="assets/img/portfolio/miami.png"
-                                        alt="Miami Beach sea level rise webscene thumbnail"
-                                        loading="lazy"
-                                    >
-
-                                </div>
-
-                            </a>
-
-                        </div>
-
-                    </div>
-                </div>
-
-
-                <!-- ================= Cartography ================= -->
-
-                <div
-                    class="portfolio-category cartography"
-                    id="cartography"
-                >
-
-                    <div class="section-heading-bar text-center">
-
-                        <h2
-                            class="page-section-heading text-secondary mb-1"
-                        >
-                            Cartography
-                        </h2>
-
-                        <div class="divider-custom mt-0">
-
-                            <div class="divider-custom-icon">
-                                <i
-                                    class="fa-solid fa-earth-americas"
-                                    aria-hidden="true"
-                                ></i>
-                            </div>
-
-                        </div>
-                    </div>
-
-
-                    <div class="row justify-content-center">
-
-                        <!-- Item 4 -->
-                        <div class="col-md-6 col-lg-4 mb-5">
-
-                            <a
-                                href="https://www.arcgis.com/apps/mapviewer/index.html?webmap=1ccd5c14ecd04d859f8e4c15f17cd3f4"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="text-decoration-none"
-                            >
-
-                                <div class="portfolio-item mx-auto">
-
-                                    <div
-                                        class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-                                    >
-                                        <div
-                                            class="portfolio-item-caption-content text-center text-white"
-                                        >
-                                            <i
-                                                class="fas fa-map mb-2"
-                                                aria-hidden="true"
-                                            ></i>
-
-                                            <h5 class="portfolio-item-title">
-                                                Current Coral Reef Bleaching
-                                            </h5>
-                                        </div>
-                                    </div>
-
-                                    <img
-                                        class="img-fluid"
-                                        src="assets/img/portfolio/corals.png"
-                                        alt="Coral reef bleaching map thumbnail"
-                                        loading="lazy"
-                                    >
-
-                                </div>
-
-                            </a>
-
-                        </div>
-
-
-                        <!-- Item 5 -->
-                        <div class="col-md-6 col-lg-4 mb-5">
-
-                            <a
-                                href="https://www.arcgis.com/apps/mapviewer/index.html?webmap=5b7c45a75d304cc1a375e395ea4682bf"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="text-decoration-none"
-                            >
-
-                                <div class="portfolio-item mx-auto">
-
-                                    <div
-                                        class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-                                    >
-                                        <div
-                                            class="portfolio-item-caption-content text-center text-white"
-                                        >
-                                            <i
-                                                class="fas fa-map mb-2"
-                                                aria-hidden="true"
-                                            ></i>
-
-                                            <h5 class="portfolio-item-title">
-                                                Fossil Exploration
-                                            </h5>
-                                        </div>
-                                    </div>
-
-                                    <img
-                                        class="img-fluid"
-                                        src="assets/img/portfolio/fossil.png"
-                                        alt="Fossil exploration map thumbnail"
-                                        loading="lazy"
-                                    >
-
-                                </div>
-
-                            </a>
-
-                        </div>
-
-
-                        <!-- Item 6 -->
-                        <div class="col-md-6 col-lg-4 mb-5">
-
-                            <a
-                                href="https://www.arcgis.com/apps/mapviewer/index.html?webmap=8ee6f6a9c0d84aec871e04a3559da8c1"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="text-decoration-none"
-                            >
-
-                                <div class="portfolio-item mx-auto">
-
-                                    <div
-                                        class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-                                    >
-                                        <div
-                                            class="portfolio-item-caption-content text-center text-white"
-                                        >
-                                            <i
-                                                class="fas fa-map mb-2"
-                                                aria-hidden="true"
-                                            ></i>
-
-                                            <h5 class="portfolio-item-title">
-                                                World Live Earthquakes Feed
-                                            </h5>
-                                        </div>
-                                    </div>
-
-                                    <img
-                                        class="img-fluid"
-                                        src="assets/img/portfolio/quakes.png"
-                                        alt="Live earthquakes feed map thumbnail"
-                                        loading="lazy"
-                                    >
-
-                                </div>
-
-                            </a>
-
-                        </div>
-
-                    </div>
-                </div>
-
-
-                <!-- ================= Web Maps ================= -->
-
-                <div
-                    class="portfolio-category web-maps"
-                    id="web-maps"
-                >
-
-                    <div class="section-heading-bar text-center">
-
-                        <h2
-                            class="page-section-heading text-secondary mb-1"
-                        >
-                            Web Maps
-                        </h2>
-
-                        <div class="divider-custom mt-0">
-
-                            <div class="divider-custom-icon">
-                                <i
-                                    class="fa-solid fa-earth-asia"
-                                    aria-hidden="true"
-                                ></i>
-                            </div>
-
-                        </div>
-                    </div>
-
-
-                    <div class="row justify-content-center">
-
-                        <!-- Item 7 -->
-                        <div class="col-md-6 col-lg-4 mb-5">
-
-                            <a
-                                href="https://www.arcgis.com/apps/mapviewer/index.html?webmap=c7638a25c75f430aa688c7752e004f29"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="text-decoration-none"
-                            >
-
-                                <div class="portfolio-item mx-auto">
-
-                                    <div
-                                        class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-                                    >
-                                        <div
-                                            class="portfolio-item-caption-content text-center text-white"
-                                        >
-                                            <i
-                                                class="fas fa-laptop mb-2"
-                                                aria-hidden="true"
-                                            ></i>
-
-                                            <h5 class="portfolio-item-title">
-                                                Snowplow Location — Salt Lake County, UT
-                                            </h5>
-                                        </div>
-                                    </div>
-
-                                    <img
-                                        class="img-fluid"
-                                        src="assets/img/portfolio/snowvehicles.png"
-                                        alt="Snowplow location web map thumbnail"
-                                        loading="lazy"
-                                    >
-
-                                </div>
-
-                            </a>
-
-                        </div>
-
-
-                        <!-- Item 8 -->
-                        <div class="col-md-6 col-lg-4 mb-5">
-
-                            <a
-                                href="https://www.arcgis.com/apps/mapviewer/index.html?webmap=3fc4db59157e4ca3845741fc53312fe2"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="text-decoration-none"
-                            >
-
-                                <div class="portfolio-item mx-auto">
-
-                                    <div
-                                        class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-                                    >
-                                        <div
-                                            class="portfolio-item-caption-content text-center text-white"
-                                        >
-                                            <i
-                                                class="fas fa-laptop mb-2"
-                                                aria-hidden="true"
-                                            ></i>
-
-                                            <h5 class="portfolio-item-title">
-                                                Particulate Matter Exposure
-                                            </h5>
-                                        </div>
-                                    </div>
-
-                                    <img
-                                        class="img-fluid"
-                                        src="assets/img/portfolio/particulate.png"
-                                        alt="PM exposure web map thumbnail"
-                                        loading="lazy"
-                                    >
-
-                                </div>
-
-                            </a>
-
-                        </div>
-
-
-                        <!-- Item 9 -->
-                        <div class="col-md-6 col-lg-4 mb-5">
-
-                            <a
-                                href="https://www.arcgis.com/apps/mapviewer/index.html?webmap=ee296884a6154d839c87677cd9c1ead9"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="text-decoration-none"
-                            >
-
-                                <div class="portfolio-item mx-auto">
-
-                                    <div
-                                        class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-                                    >
-                                        <div
-                                            class="portfolio-item-caption-content text-center text-white"
-                                        >
-                                            <i
-                                                class="fas fa-laptop mb-2"
-                                                aria-hidden="true"
-                                            ></i>
-
-                                            <h5 class="portfolio-item-title">
-                                                USA Unemployment Rate
-                                            </h5>
-                                        </div>
-                                    </div>
-
-                                    <img
-                                        class="img-fluid"
-                                        src="assets/img/portfolio/employment.png"
-                                        alt="USA unemployment rate web map thumbnail"
-                                        loading="lazy"
-                                    >
-
-                                </div>
-
-                            </a>
-
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- ========================================================= -->
-        <!-- NEW GIS PROJECTS SECTION -->
-        <!-- Place this BEFORE About -->
-        <!-- ========================================================= -->
-
-        <section
-            class="page-section projects-section"
-            id="projects"
-        >
-
-            <div class="container">
-
-                <!-- Section heading -->
-                <div class="text-center">
-
-                    <h2
-                        id="projects-title"
-                        class="page-section-heading text-secondary text-uppercase mb-0"
-                    >
-                        Featured GIS Projects
-                    </h2>
-
-                    <div class="divider-custom">
-
-                        <div class="divider-custom-line"></div>
-
-                        <div class="divider-custom-icon">
-                            <i
-                                class="fas fa-layer-group"
-                                aria-hidden="true"
-                            ></i>
-                        </div>
-
-                        <div class="divider-custom-line"></div>
-
-                    </div>
-
-                    <p class="projects-intro">
-                        Selected GIS projects demonstrating spatial analysis,
-                        cartography, geospatial data visualization,
-                        accessibility analysis, environmental risk,
-                        and web mapping.
-                    </p>
-
-                </div>
-
-
-                <!-- Featured project -->
-                <div
-                    id="featured-project"
-                    class="featured-project-wrapper"
-                ></div>
-
-
-                <!-- Project filters -->
-                <div
-                    class="project-filters"
-                    role="group"
-                    aria-label="Filter GIS projects"
-                >
-
-                    <button
-                        type="button"
-                        class="project-filter active"
-                        data-filter="all"
-                    >
-                        All
-                    </button>
-
-                    <button
-                        type="button"
-                        class="project-filter"
-                        data-filter="mobility"
-                    >
-                        Mobility
-                    </button>
-
-                    <button
-                        type="button"
-                        class="project-filter"
-                        data-filter="health"
-                    >
-                        Health
-                    </button>
-
-                    <button
-                        type="button"
-                        class="project-filter"
-                        data-filter="risk"
-                    >
-                        Risk &amp; Resilience
-                    </button>
-
-                    <button
-                        type="button"
-                        class="project-filter"
-                        data-filter="accessibility"
-                    >
-                        Accessibility
-                    </button>
-
-                    <button
-                        type="button"
-                        class="project-filter"
-                        data-filter="python"
-                    >
-                        Python
-                    </button>
-
-                </div>
-
-
-                <!-- Project grid -->
-                <div
-                    id="projects-grid"
-                    class="row g-4"
-                ></div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ========================================================= -->
-        <!-- About -->
-        <!-- ========================================================= -->
-
-        <section
-            class="page-section about-section text-white mb-0"
-            id="about"
-        >
-
-            <div class="container">
-
-                <h2
-                    class="page-section-heading text-center text-uppercase text-white"
-                >
-                    About
-                </h2>
-
-
-                <img
-                    class="masthead-avatar mb-5"
-                    src="assets/img/portfolio/profilephoto.png"
-                    alt="Emile Miranda portrait"
-                    loading="lazy"
-                >
-
-
-                <div class="divider-custom divider-light">
-
-                    <div class="divider-custom-line"></div>
-
-                    <div class="divider-custom-icon">
-                        <i
-                            class="fas fa-dice-d20"
-                            aria-hidden="true"
-                        ></i>
-                    </div>
-
-                    <div class="divider-custom-line"></div>
-
-                </div>
-
-
-                <div class="row about-columns justify-content-center">
-
-                    <div class="col-12 col-lg-5 text-box">
-
-                        <p class="lead justify-text tight-lines clamp-7">
-                            I specialize in Geographic Information Systems
-                            (GIS), Internet of Things (IoT), and Artificial
-                            Intelligence (AI), integrating rigorous research
-                            and development expertise with applied
-                            experience in automation and scalable,
-                            technology-driven solutions. My professional
-                            trajectory is informed by analytical depth,
-                            strategic thinking, and a commitment to
-                        </p>
-
-                    </div>
-
-
-                    <div class="col-12 col-lg-4 text-box">
-
-                        <p class="lead justify-text tight-lines clamp-7">
-                            advancing geospatial innovation with measurable
-                            impact. I bring a results-driven,
-                            leadership-oriented perspective that connects
-                            geographic intelligence with advanced
-                            computational technologies, enabling
-                            cross-disciplinary collaboration, informed
-                            decision-making, and the delivery of
-                            forward-looking geospatial solutions.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="text-center mt-4">
-
-                    <a
-                        class="btn btn-xl btn-outline-light"
-                        href="resume.html"
-                    >
-                        <i
-                            class="fas fa-download me-2"
-                            aria-hidden="true"
-                        ></i>
-                        Resume
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- ========================================================= -->
-    <!-- Project Case Study Modal -->
-    <!-- ========================================================= -->
-
-    <div
-        id="projectModal"
-        class="project-modal"
-        aria-hidden="true"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="projectModalTitle"
-    >
-
-        <div class="project-modal-backdrop"></div>
-
-        <div class="project-modal-dialog">
-
-            <button
-                type="button"
-                class="project-modal-close"
-                id="projectModalClose"
-                aria-label="Close project details"
-            >
-                <i
-                    class="fas fa-xmark"
-                    aria-hidden="true"
-                ></i>
-            </button>
-
-
-            <div
-                id="projectModalVisual"
-                class="project-modal-visual"
-            ></div>
-
-
-            <div class="project-modal-content">
-
-                <div
-                    id="projectModalCategory"
-                    class="project-modal-category"
-                ></div>
-
-                <h2 id="projectModalTitle"></h2>
-
-                <p
-                    id="projectModalSummary"
-                    class="project-modal-summary"
-                ></p>
-
-
-                <div class="project-details-grid">
-
-                    <div class="project-detail-block">
-
-                        <h3>
-                            <i
-                                class="fas fa-bullseye"
-                                aria-hidden="true"
-                            ></i>
-                            Project Focus
-                        </h3>
-
-                        <p id="projectModalProblem"></p>
-
-                    </div>
-
-
-                    <div class="project-detail-block">
-
-                        <h3>
-                            <i
-                                class="fas fa-gears"
-                                aria-hidden="true"
-                            ></i>
-                            Methods &amp; Tools
-                        </h3>
-
-                        <p id="projectModalMethods"></p>
-
-                    </div>
-
-
-                    <div class="project-detail-block">
-
-                        <h3>
-                            <i
-                                class="fas fa-chart-line"
-                                aria-hidden="true"
-                            ></i>
-                            Outputs
-                        </h3>
-
-                        <p id="projectModalOutputs"></p>
-
-                    </div>
-
-                </div>
-
-
-                <div
-                    id="projectModalTags"
-                    class="project-modal-tags"
-                ></div>
-
-
-                <div
-                    id="projectModalActions"
-                    class="project-modal-actions"
-                ></div>
-
-            </div>
-
-        </div>
-
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" aria-label="Primary navigation">
+    <div class="container">
+      <a class="navbar-brand" href="index.html" aria-label="EM — home">
+        <span class="name-first">Emile</span>
+        <span class="name-middle">B<span class="custom-icon" aria-hidden="true"><i class="fa-regular fa-compass"></i></span></span>
+        <span class="name-last">Miranda</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="visually-hidden">Toggle navigation</span>
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item mx-0 mx-lg-1"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+          <li class="nav-item mx-0 mx-lg-1"><a class="nav-link" href="index.html#portfolio">Portfolio</a></li>
+          <li class="nav-item mx-0 mx-lg-1"><a class="nav-link" href="index.html#projects">Projects</a></li>
+          <li class="nav-item mx-0 mx-lg-1"><a class="nav-link" href="map.html">Live Map</a></li>
+          <li class="nav-item mx-0 mx-lg-1"><a class="nav-link" href="index.html#about">About</a></li>
+          <li class="nav-item mx-0 mx-lg-1"><a class="nav-link" href="resume.html">Resume</a></li>
+          <li class="nav-item mx-0 mx-lg-1"><a class="nav-link" href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
+  <main id="main" tabindex="-1">
+    <!-- ===================================================== -->
+    <!-- Hero -->
+    <!-- ===================================================== -->
+    <header class="home-hero">
+      <div class="container py-5">
+        <div class="hero-copy">
+          <span class="hero-kicker"><i class="fa-solid fa-location-crosshairs" aria-hidden="true"></i> GIS · Data · Web Mapping</span>
+          <h1 class="hero-title">Geospatial Data Analyst & Developer</h1>
+          <p class="hero-subtitle">GIS Developer · Data Analytics · Web Mapping</p>
+          <p class="hero-subtitle">I build practical geospatial workflows and interactive maps that turn complex spatial data into clear, useful information.</p>
 
-    <!-- ========================================================= -->
-    <!-- Footer -->
-    <!-- ========================================================= -->
+          <div class="hero-actions">
+            <a class="btn site-button btn-site-primary" href="#projects">View Projects <i class="fa-solid fa-arrow-down ms-2" aria-hidden="true"></i></a>
+            <a class="btn site-button btn-site-outline" href="map.html">Open Live Map <i class="fa-solid fa-map-location-dot ms-2" aria-hidden="true"></i></a>
+            <a class="btn site-button btn-site-outline" href="resume.html">View Resume <i class="fa-solid fa-file-lines ms-2" aria-hidden="true"></i></a>
+          </div>
 
-    <footer
-        id="contact"
-        class="footer bg-secondary text-white text-center py-5"
-        role="contentinfo"
-    >
+          <div class="hero-proof" aria-label="Areas of focus">
+            <div class="hero-proof-item"><span class="hero-proof-label">Focus</span><span class="hero-proof-value">Spatial Data Analysis</span></div>
+            <div class="hero-proof-item"><span class="hero-proof-label">Practice</span><span class="hero-proof-value">GIS Analysis &amp; Automation</span></div>
+            <div class="hero-proof-item"><span class="hero-proof-label">Delivery</span><span class="hero-proof-value">Interactive Web Mapping</span></div>
+          </div>
+        </div>
+      </div>
+    </header>
 
-        <div class="container">
+    <!-- ===================================================== -->
+    <!-- Featured Case Studies -->
+    <!-- ===================================================== -->
+    <section class="projects-section" id="projects" aria-labelledby="projects-title">
+      <div class="site-container">
+        <div class="text-center">
+          <span class="section-kicker">Selected case studies</span>
+          <h2 id="projects-title" class="section-heading">Featured GIS Projects</h2>
+          <div class="section-heading-rule" aria-hidden="true"></div>
+          <p class="projects-intro">Selected work demonstrating geospatial analysis, data workflows, accessibility analysis, environmental risk, cartography, and web mapping.</p>
+        </div>
 
-            <div class="row">
+        <div id="featured-project" class="featured-project-wrapper" aria-live="polite"></div>
 
-                <!-- LinkedIn -->
-                <div class="col-12 col-lg-4 mb-5 mb-lg-0">
+        <div class="project-filters" role="group" aria-label="Filter GIS projects">
+          <button type="button" class="project-filter active" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="project-filter" data-filter="mobility" aria-pressed="false">Mobility</button>
+          <button type="button" class="project-filter" data-filter="health" aria-pressed="false">Health</button>
+          <button type="button" class="project-filter" data-filter="risk" aria-pressed="false">Risk &amp; Resilience</button>
+          <button type="button" class="project-filter" data-filter="accessibility" aria-pressed="false">Accessibility</button>
+          <button type="button" class="project-filter" data-filter="python" aria-pressed="false">Python</button>
+        </div>
 
-                    <h4 class="text-uppercase mb-4">
-                        LinkedIn
-                    </h4>
+        <div id="projects-grid" class="row g-4" aria-live="polite"></div>
+      </div>
+    </section>
 
-                    <p class="lead mb-0 footer-inline">
-
-                        <span>
-                            Connect with Me
-                        </span>
-
-                        <a
-                            href="https://www.linkedin.com/in/emilemiranda/"
-                            class="text-decoration-none fw-bold footer-inline-link"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            linkedin.com/in/emilemiranda/
-                        </a>
-
-                    </p>
-
-                </div>
-
-
-                <!-- Social -->
-                <div class="col-12 col-lg-3 mb-5 mb-lg-0">
-
-                    <h4 class="text-uppercase mb-4 footer-heading-nowrap">
-                        Around the Web
-                    </h4>
-
-                    <a
-                        class="btn btn-outline-light btn-social mx-1"
-                        href="https://www.linkedin.com/in/emilemiranda/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="LinkedIn"
-                    >
-                        <i
-                            class="fab fa-fw fa-linkedin-in"
-                            aria-hidden="true"
-                        ></i>
-                    </a>
-
-
-                    <a
-                        class="btn btn-outline-light btn-social mx-1"
-                        href="https://emilemiranda.github.io"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Website"
-                    >
-                        <i
-                            class="fas fa-fw fa-globe"
-                            aria-hidden="true"
-                        ></i>
-                    </a>
-
-                </div>
-
-
-                <!-- Email -->
-                <div class="col-12 col-lg-5">
-
-                    <h4 class="text-uppercase mb-4">
-                        Get In touch @
-                    </h4>
-
-                    <p class="lead mb-0">
-
-                        Google Gmail
-
-                        <a
-                            href="mailto:emile.mirandabalas@gmail.com"
-                            class="text-decoration-none fw-bold"
-                        >
-                            emile.mirandabalas@gmail.com
-                        </a>
-
-                    </p>
-
-                </div>
-
+    <!-- ===================================================== -->
+    <!-- Signature Live Map -->
+    <!-- ===================================================== -->
+    <section class="signature-map-section" aria-labelledby="signature-map-title">
+      <div class="site-container">
+        <div class="signature-map-card">
+          <div class="signature-map-content">
+            <span class="signature-map-eyebrow">Signature portfolio feature</span>
+            <h2 id="signature-map-title" class="signature-map-title">Explore the Live Map</h2>
+            <p class="signature-map-copy">Go beyond static screenshots. Explore an interactive Leaflet map with dynamic geographic layers, time filtering, basemap switching, legends, feature popups, and map-focused controls.</p>
+            <div class="hero-actions">
+              <a class="btn site-button btn-site-primary" href="map.html">Launch Live Map <i class="fa-solid fa-arrow-up-right-from-square ms-2" aria-hidden="true"></i></a>
+              <a class="btn site-button btn-site-outline" href="#portfolio">Browse Map Showcase</a>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- ===================================================== -->
+    <!-- Selected GIS Showcase -->
+    <!-- ===================================================== -->
+    <section class="showcase-section" id="portfolio" aria-labelledby="portfolio-title">
+      <div class="site-container">
+        <div class="text-center mb-5">
+          <span class="section-kicker">Map portfolio</span>
+          <h2 id="portfolio-title" class="section-heading">Selected GIS Work</h2>
+          <div class="section-heading-rule" aria-hidden="true"></div>
+          <p class="section-lead">A visual selection of web scenes, analytical maps, and interactive GIS work.</p>
         </div>
 
-    </footer>
-
-
-    <!-- ========================================================= -->
-    <!-- Copyright -->
-    <!-- ========================================================= -->
-
-    <div class="copyright py-4 text-center text-white">
-
-        <div class="container">
-
-            <small>
-                Copyright &copy;
-                <span id="currentYear"></span>
-                Emile Miranda
-            </small>
-
+        <div class="showcase-category" id="spatial-analysis">
+          <h3 class="showcase-heading"><i class="fa-solid fa-earth-europe" aria-hidden="true"></i>Spatial Analysis</h3>
+          <div class="row showcase-grid mt-3">
+            <div class="col-md-6 col-lg-4">
+              <a class="showcase-card" href="https://storymaps.arcgis.com/stories/682c7a6d2ab7480ab8db41b22688c5e7" target="_blank" rel="noopener noreferrer">
+                <div class="showcase-card-image-wrap"><img src="assets/img/portfolio/farmers.png" alt="Farmers Market Food Access StoryMap thumbnail" loading="lazy" decoding="async"></div>
+                <div class="showcase-card-content"><h4 class="showcase-card-title">Farmers Market Food Access</h4><span class="showcase-card-type">StoryMap</span></div>
+              </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <a class="showcase-card" href="https://www.arcgis.com/home/webscene/viewer.html?webscene=89102fa2d3ce4f7587a37cea4a61788d" target="_blank" rel="noopener noreferrer">
+                <div class="showcase-card-image-wrap"><img src="assets/img/portfolio/earth.png" alt="Christchurch Earthquake 2011 web scene thumbnail" loading="lazy" decoding="async"></div>
+                <div class="showcase-card-content"><h4 class="showcase-card-title">Christchurch Earthquake, 2011</h4><span class="showcase-card-type">Web Scene</span></div>
+              </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <a class="showcase-card" href="https://www.arcgis.com/home/webscene/viewer.html?webscene=d9edbe52adae450693e33e7bb7190a80" target="_blank" rel="noopener noreferrer">
+                <div class="showcase-card-image-wrap"><img src="assets/img/portfolio/miami.png" alt="Miami Beach sea level rise web scene thumbnail" loading="lazy" decoding="async"></div>
+                <div class="showcase-card-content"><h4 class="showcase-card-title">City of Miami Beach Sea Level Rise</h4><span class="showcase-card-type">Web Scene</span></div>
+              </a>
+            </div>
+          </div>
         </div>
 
+        <div class="showcase-category" id="cartography">
+          <h3 class="showcase-heading"><i class="fa-solid fa-earth-americas" aria-hidden="true"></i>Cartography</h3>
+          <div class="row showcase-grid mt-3">
+            <div class="col-md-6 col-lg-4">
+              <a class="showcase-card" href="https://www.arcgis.com/apps/mapviewer/index.html?webmap=1ccd5c14ecd04d859f8e4c15f17cd3f4" target="_blank" rel="noopener noreferrer">
+                <div class="showcase-card-image-wrap"><img src="assets/img/portfolio/corals.png" alt="Current coral reef bleaching map thumbnail" loading="lazy" decoding="async"></div>
+                <div class="showcase-card-content"><h4 class="showcase-card-title">Current Coral Reef Bleaching</h4><span class="showcase-card-type">Web Map</span></div>
+              </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <a class="showcase-card" href="https://www.arcgis.com/apps/mapviewer/index.html?webmap=5b7c45a75d304cc1a375e395ea4682bf" target="_blank" rel="noopener noreferrer">
+                <div class="showcase-card-image-wrap"><img src="assets/img/portfolio/fossil.png" alt="Fossil exploration map thumbnail" loading="lazy" decoding="async"></div>
+                <div class="showcase-card-content"><h4 class="showcase-card-title">Fossil Exploration</h4><span class="showcase-card-type">Web Map</span></div>
+              </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <a class="showcase-card" href="https://www.arcgis.com/apps/mapviewer/index.html?webmap=8ee6f6a9c0d84aec871e04a3559da8c1" target="_blank" rel="noopener noreferrer">
+                <div class="showcase-card-image-wrap"><img src="assets/img/portfolio/quakes.png" alt="World live earthquakes feed map thumbnail" loading="lazy" decoding="async"></div>
+                <div class="showcase-card-content"><h4 class="showcase-card-title">World Live Earthquakes Feed</h4><span class="showcase-card-type">Web Map</span></div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="showcase-category" id="web-maps">
+          <h3 class="showcase-heading"><i class="fa-solid fa-globe" aria-hidden="true"></i>Web Maps</h3>
+          <div class="row showcase-grid mt-3">
+            <div class="col-md-6 col-lg-4">
+              <a class="showcase-card" href="https://www.arcgis.com/apps/mapviewer/index.html?webmap=c7638a25c75f430aa688c7752e004f29" target="_blank" rel="noopener noreferrer">
+                <div class="showcase-card-image-wrap"><img src="assets/img/portfolio/snowvehicles.png" alt="Snowplow location web map thumbnail" loading="lazy" decoding="async"></div>
+                <div class="showcase-card-content"><h4 class="showcase-card-title">Snowplow Location — Salt Lake County, UT</h4><span class="showcase-card-type">Web Map</span></div>
+              </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <a class="showcase-card" href="https://www.arcgis.com/apps/mapviewer/index.html?webmap=3fc4db59157e4ca3845741fc53312fe2" target="_blank" rel="noopener noreferrer">
+                <div class="showcase-card-image-wrap"><img src="assets/img/portfolio/particulate.png" alt="Particulate matter exposure web map thumbnail" loading="lazy" decoding="async"></div>
+                <div class="showcase-card-content"><h4 class="showcase-card-title">Particulate Matter Exposure</h4><span class="showcase-card-type">Web Map</span></div>
+              </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <a class="showcase-card" href="https://www.arcgis.com/apps/mapviewer/index.html?webmap=ee296884a6154d839c87677cd9c1ead9" target="_blank" rel="noopener noreferrer">
+                <div class="showcase-card-image-wrap"><img src="assets/img/portfolio/employment.png" alt="USA unemployment rate web map thumbnail" loading="lazy" decoding="async"></div>
+                <div class="showcase-card-content"><h4 class="showcase-card-title">USA Unemployment Rate</h4><span class="showcase-card-type">Web Map</span></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- About -->
+    <!-- ===================================================== -->
+    <section class="site-section about-section" id="about" aria-labelledby="about-title">
+      <div class="site-container">
+        <div class="text-center">
+          <span class="section-kicker">Professional profile</span>
+          <h2 id="about-title" class="section-heading">About EM</h2>
+          <div class="section-heading-rule" aria-hidden="true"></div>
+        </div>
+
+        <div class="about-layout">
+          <div class="about-portrait-wrap">
+            <img class="about-portrait" src="assets/img/portfolio/profilephoto.png" alt="Portrait of Emile B Miranda" loading="lazy" decoding="async">
+          </div>
+          <div>
+            <div class="about-copy">
+              <p>I’m EM, a geospatial professional focused on GIS development, spatial data workflows, analytics, cartography, and interactive web mapping. My work combines technical implementation with clear visual communication—organizing spatial data, building reproducible workflows, and presenting results through maps and web-based tools.</p>
+              <p>My portfolio brings together selected GIS projects, a live interactive map, and a focused professional resume. Together, they show how I approach geospatial problems from data preparation and analysis through visualization, documentation, and delivery.</p>
+            </div>
+            <div class="about-actions">
+              <a class="btn site-button btn-dark-site" href="resume.html">View Resume <i class="fa-solid fa-arrow-right ms-2" aria-hidden="true"></i></a>
+              <a class="btn site-button btn-light-site" href="map.html">Explore Live Map <i class="fa-solid fa-map ms-2" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer py-5" role="contentinfo">
+    <div class="site-container">
+      <div class="row g-4 align-items-start">
+        <div class="col-12 col-lg-4">
+          <h2 class="footer-heading">LinkedIn</h2>
+          <p class="footer-copy mb-0">Connect with me<br><a class="footer-link fw-bold" href="https://www.linkedin.com/in/emilemiranda/" target="_blank" rel="noopener noreferrer">linkedin.com/in/emilemiranda/</a></p>
+        </div>
+        <div class="col-12 col-lg-3">
+          <h2 class="footer-heading">Around the Web</h2>
+          <div class="footer-social">
+            <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/in/emilemiranda/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+            <a class="btn btn-outline-light btn-social" href="https://emilemiranda.github.io" target="_blank" rel="noopener noreferrer" aria-label="Website home"><i class="fa-solid fa-globe" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="col-12 col-lg-5">
+          <h2 class="footer-heading">Get in touch</h2>
+          <p class="footer-copy mb-0"><a class="footer-link fw-bold" href="mailto:emile.mirandabalas@gmail.com">emile.mirandabalas@gmail.com</a></p>
+        </div>
+      </div>
     </div>
+  </footer>
 
+  <div class="site-copyright">
+    <div class="site-container"><p>Copyright &copy; <span id="currentYear"></span> Emile B Miranda</p></div>
+  </div>
 
-    <!-- ========================================================= -->
-    <!-- Bootstrap -->
-    <!-- ========================================================= -->
+  <!-- Project dialog -->
+  <div id="projectModal" class="project-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
+    <div class="project-modal-backdrop"></div>
+    <div class="project-modal-dialog" role="document" tabindex="-1">
+      <button type="button" class="project-modal-close" id="projectModalClose" aria-label="Close project details">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <div id="projectModalVisual" class="project-modal-visual"></div>
+      <div class="project-modal-content">
+        <div id="projectModalCategory" class="project-modal-category"></div>
+        <h2 id="projectModalTitle"></h2>
+        <p id="projectModalSummary" class="project-modal-summary"></p>
+        <div class="project-details-grid">
+          <section class="project-detail-block">
+            <h3><i class="fa-solid fa-bullseye" aria-hidden="true"></i>Project Focus</h3>
+            <p id="projectModalProblem"></p>
+          </section>
+          <section class="project-detail-block">
+            <h3><i class="fa-solid fa-gears" aria-hidden="true"></i>Methods &amp; Tools</h3>
+            <p id="projectModalMethods"></p>
+          </section>
+          <section class="project-detail-block">
+            <h3><i class="fa-solid fa-chart-line" aria-hidden="true"></i>Outputs</h3>
+            <p id="projectModalOutputs"></p>
+          </section>
+        </div>
+        <div id="projectModalTags" class="project-modal-tags"></div>
+        <div id="projectModalActions" class="project-modal-actions"></div>
+      </div>
+    </div>
+  </div>
 
-    <script
-        defer
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    ></script>
-
-
-    <!-- Start Bootstrap theme JS -->
-    <script
-        defer
-        src="js/scripts.js"
-    ></script>
-
-
-    <!-- GIS Projects JS -->
-    <script
-        defer
-        src="js/projects.js"
-    ></script>
-
-
-    <!-- ========================================================= -->
-    <!-- Small site script -->
-    <!-- ========================================================= -->
-
-    <script>
-
-        // Current year
-        document.getElementById("currentYear").textContent =
-            new Date().getFullYear();
-
-
-        // Skip-link focus
-        (function () {
-
-            const skip = document.querySelector(".skip-link");
-
-            if (!skip) {
-                return;
-            }
-
-            skip.addEventListener("click", function () {
-
-                const main = document.getElementById("main");
-
-                if (main) {
-
-                    main.setAttribute("tabindex", "-1");
-
-                    main.focus();
-
-                }
-
-            });
-
-        })();
-
-    </script>
-
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer src="js/scripts.js"></script>
+  <script defer src="js/projects.js"></script>
+  <script defer src="js/site.js"></script>
 </body>
 </html>
