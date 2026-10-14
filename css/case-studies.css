@@ -57,4 +57,37 @@
 @media (max-width: 900px) { .case-study-layout { grid-template-columns:minmax(0,1fr); } .case-study-sidebar { position:static; grid-template-columns:repeat(2,minmax(0,1fr)); } .case-study-sidebar .case-study-toc-card { grid-column:1 / -1; } }
 @media (max-width: 700px) { .case-study-hero { grid-template-columns:minmax(0,1fr); padding-top:1.6rem; } .case-study-hero-figure { order:-1; } .case-study-sidebar { grid-template-columns:minmax(0,1fr); } .case-study-related { grid-template-columns:minmax(0,1fr); } }
 @media (prefers-reduced-motion: reduce) { .case-study-button { transition:none; } }
+
+/* Laptop-height refinement: keep the case-study sidebar sticky and independently
+   scrollable, so its lower Professional context / View Resume card stays reachable. */
+@media (min-width: 901px) {
+  .case-study-sidebar {
+    max-height: calc(100vh - var(--site-navbar-height, 84px) - 2rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: #aab8c2 transparent;
+    padding: 0 .35rem .35rem 0;
+  }
+  .case-study-sidebar:focus-within { scroll-behavior: smooth; }
+  .case-study-sidebar::-webkit-scrollbar { width: 6px; }
+  .case-study-sidebar::-webkit-scrollbar-track { background: transparent; }
+  .case-study-sidebar::-webkit-scrollbar-thumb {
+    background: #aab8c2;
+    border-radius: 999px;
+  }
+  .case-study-sidebar::-webkit-scrollbar-thumb:hover { background: #718492; }
+}
+.case-study-toc a:focus-visible,
+.case-study-button:focus-visible {
+  outline: 3px solid var(--site-accent);
+  outline-offset: 3px;
+}
+@media (max-width: 900px) {
+  /* On narrow screens use the document's normal scroll, not nested scrolling. */
+  .case-study-sidebar { max-height: none; overflow: visible; }
+  .case-study-sidebar .case-study-toc-card { min-width: 0; }
+  .case-study-toc { gap: .55rem; }
+}
+
 @media print { #mainNav, .site-footer, .site-copyright, .case-study-actions, .case-study-related, .case-study-end-cta { display:none !important; } body { padding-top:0; background:#fff; } .case-study-sidebar { position:static; } .case-study-layout { grid-template-columns:minmax(0,1fr) 220px; } }
