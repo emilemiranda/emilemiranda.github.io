@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="A reusable Spain-wide municipal GIS workflow using IGN/CNIG and sigMayores WFS resources plus INE population-by-age data, five notebooks, reusable scripts, CSV/GeoPackage exports, and an interactive HTML map." name="description"/>
+  <meta content="Emile SB Mirandas" name="author"/>
+  <title>
+   Spain Healthcare Accessibility &amp; Ageing Vulnerability | GIS Case Study &mdash; Emile SB Mirandas
+  </title>
+  <link href="../assets/logo.svg" rel="icon" type="image/svg+xml"/>
+  <link href="../assets/apple-touch-icon.png" rel="apple-touch-icon"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800|Lato:400,400italic,700,700italic" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet"/>
+  <link href="../css/styles.css" rel="stylesheet"/>
+  <link href="../css/case-studies.css" rel="stylesheet"/>
+ </head>
+ <body id="page-top">
+  <a class="skip-link" href="#main">
+   Skip to main content
+  </a>
+  <nav aria-label="Primary navigation" class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+   <div class="container">
+    <a aria-label="Emile SB Mirandas &mdash; home" class="navbar-brand" href="../index.html">
+     <span class="name-first">
+      Emile
+     </span>
+     <span class="name-middle">
+      SB
+      <span aria-hidden="true" class="custom-icon">
+       <i class="fa-regular fa-compass">
+       </i>
+      </span>
+     </span>
+     <span class="name-last">
+      Mirandas
+     </span>
+    </a>
+    <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarResponsive" data-bs-toggle="collapse" type="button">
+     <span class="visually-hidden">
+      Toggle navigation
+     </span>
+     <i aria-hidden="true" class="fa-solid fa-bars">
+     </i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+     <ul class="navbar-nav ms-auto">
+      <li class="nav-item mx-0 mx-lg-1">
+       <a class="nav-link" href="../index.html">
+        Home
+       </a>
+      </li>
+      <li class="nav-item mx-0 mx-lg-1">
+       <a class="nav-link" href="../index.html#portfolio">
+        Portfolio
+       </a>
+      </li>
+      <li class="nav-item mx-0 mx-lg-1">
+       <a aria-current="page" class="nav-link active" href="../index.html#projects">
+        Projects
+       </a>
+      </li>
+      <li class="nav-item mx-0 mx-lg-1">
+       <a class="nav-link" href="../map.html">
+        Live Map
+       </a>
+      </li>
+      <li class="nav-item mx-0 mx-lg-1">
+       <a class="nav-link" href="../index.html#about">
+        About
+       </a>
+      </li>
+      <li class="nav-item mx-0 mx-lg-1">
+       <a class="nav-link" href="../resume.html">
+        Resume
+       </a>
+      </li>
+      <li class="nav-item mx-0 mx-lg-1">
+       <a class="nav-link" href="../index.html#contact">
+        Contact
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </nav>
+  <main class="case-study-main" id="main" tabindex="-1">
+   <div class="case-study-wrap">
+    <nav aria-label="Breadcrumb" class="case-study-breadcrumbs">
+     <ol>
+      <li>
+       <a href="../index.html">
+        Home
+       </a>
+      </li>
+      <li>
+       <a href="../index.html#projects">
+        Projects
+       </a>
+      </li>
+      <li aria-current="page">
+       Spain Healthcare Accessibility
+      </li>
+     </ol>
+    </nav>
+    <header class="case-study-hero">
+     <div class="case-study-hero-copy">
+      <span class="case-study-eyebrow">
+       <i aria-hidden="true" class="fa-solid fa-heart-pulse">
+       </i>
+       Healthcare &amp; Demographic Analysis &middot; Case Study 04/05
+      </span>
+      <h1 class="case-study-title">
+       Spain Healthcare Accessibility &amp; Ageing Vulnerability
+      </h1>
+      <p class="case-study-lead">
+       A VS Code-ready, notebook-led GIS workflow for combining municipal boundaries, healthcare and social-resource services, and INE population-by-age data into healthcare accessibility and ageing-vulnerability indicators across Spain.
+      </p>
+      <div class="case-study-tags">
+       <span class="case-study-tag">
+        Python
+       </span>
+       <span class="case-study-tag">
+        WFS
+       </span>
+       <span class="case-study-tag">
+        IGN/CNIG
+       </span>
+       <span class="case-study-tag">
+        sigMayores
+       </span>
+       <span class="case-study-tag">
+        INE
+       </span>
+       <span class="case-study-tag">
+        GeoPackage
+       </span>
+       <span class="case-study-tag">
+        CSV
+       </span>
+       <span class="case-study-tag">
+        Jupyter
+       </span>
+      </div>
+      <div class="case-study-actions">
+       <a class="case-study-button primary" href="../index.html#projects">
+        <i aria-hidden="true" class="fa-solid fa-arrow-left">
+        </i>
+        All projects
+       </a>
+       <a class="case-study-button" href="../map.html">
+        <i aria-hidden="true" class="fa-solid fa-map-location-dot">
+        </i>
+        Explore Live Map
+       </a>
+      </div>
+     </div>
+     <figure class="case-study-hero-figure">
+      <img alt="Spain Healthcare Accessibility &amp; Ageing Vulnerability project visual" decoding="async" src="../assets/img/projects/spain-healthcare.png"/>
+      <figcaption>
+       Portfolio visual for the Spain healthcare-accessibility and ageing-vulnerability workflow.
+      </figcaption>
+     </figure>
+    </header>
+    <div class="case-study-layout">
+     <article class="case-study-article">
+      <section class="case-study-section" id="overview">
+       <h2>
+        Project overview
+       </h2>
+       <p>
+        This project is organized as a repeatable data workflow rather than a one-off map. It combines public geospatial services with demographic attributes, standardizes those inputs, builds municipality-level indicators, performs hotspot mapping, and exports both analytical tables and an interactive HTML map.
+       </p>
+       <div class="case-study-note">
+        <strong>
+         Project question:
+        </strong>
+        How can healthcare/social-resource information and population-by-age data be brought into a reusable municipal workflow for exploring healthcare accessibility and ageing-related vulnerability across Spain?
+       </div>
+       <p>
+        The repository includes five ordered notebooks and reusable helper scripts so data discovery, acquisition, cleaning, indicator construction, mapping, and export can be inspected step by step.
+       </p>
+      </section>
+      <section class="case-study-section" id="data">
+       <h2>
+        Data and sources
+       </h2>
+       <ul>
+        <li>
+         <strong>
+          IGN / CNIG:
+         </strong>
+         administrative boundaries accessed through WFS.
+        </li>
+        <li>
+         <strong>
+          sigMayores:
+         </strong>
+         healthcare-resource WFS and social-resource WFS.
+        </li>
+        <li>
+         <strong>
+          INE:
+         </strong>
+         population by sex and age, year by year.
+        </li>
+       </ul>
+       <p>
+        The project notes do not specify exact WFS layer IDs, retrieval dates, or a single data vintage for all INE tables. These should be captured for each run in the source registry/configuration rather than filled in by assumption.
+       </p>
+      </section>
+      <section class="case-study-section" id="workflow">
+       <h2>
+        Method and workflow
+       </h2>
+       <ol class="case-study-step-list">
+        <li>
+         <strong>
+          Discover the sources.
+         </strong>
+         Run
+         <code>
+          notebooks/01_data_discovery.ipynb
+         </code>
+         to inspect source layers and determine the needed configuration fields.
+        </li>
+        <li>
+         <strong>
+          Download inputs.
+         </strong>
+         Use
+         <code>
+          notebooks/02_download_raw_data.ipynb
+         </code>
+         and the WFS helpers to retrieve the required data.
+        </li>
+        <li>
+         <strong>
+          Clean and standardize.
+         </strong>
+         Run
+         <code>
+          notebooks/03_clean_standardize.ipynb
+         </code>
+         to normalize attributes, types, identifiers, and spatial references.
+        </li>
+        <li>
+         <strong>
+          Join and build indicators.
+         </strong>
+         Run
+         <code>
+          notebooks/04_join_build_indicators.ipynb
+         </code>
+         to join source attributes and construct municipal indicators.
+        </li>
+        <li>
+         <strong>
+          Map spatial patterns.
+         </strong>
+         Run
+         <code>
+          notebooks/05_hotspot_mapping.ipynb
+         </code>
+         to produce hotspot-mapping outputs.
+        </li>
+        <li>
+         <strong>
+          Export products.
+         </strong>
+         Use the reusable export scripts to write CSV, GeoPackage, static map, and interactive HTML outputs.
+        </li>
+       </ol>
+       <div class="case-study-note">
+        <strong>
+         Configuration requirement:
+        </strong>
+        after Notebook 01, set
+        <code>
+         BOUNDARY_LAYER
+        </code>
+        ,
+        <code>
+         HEALTH_LAYER
+        </code>
+        ,
+        <code>
+         SOCIAL_LAYER
+        </code>
+        ,
+        <code>
+         MUNICIPALITY_CODE_COL
+        </code>
+        , and
+        <code>
+         MUNICIPALITY_NAME_COL
+        </code>
+        in
+        <code>
+         scripts/config.py
+        </code>
+        , then rerun from Notebook 02 onward.
+       </div>
+      </section>
+      <section class="case-study-section" id="findings">
+       <h2>
+        What the outputs support
+       </h2>
+       <ul>
+        <li>
+         <strong>
+          Municipal comparisons:
+         </strong>
+         joined attributes and constructed indicators provide a consistent structure for comparing healthcare-resource and ageing-related patterns between municipalities.
+        </li>
+        <li>
+         <strong>
+          Hotspot exploration:
+         </strong>
+         the notebook chain includes hotspot mapping, making spatial clusters and outliers available for review under the configured analysis settings.
+        </li>
+        <li>
+         <strong>
+          Multiple ways to inspect results:
+         </strong>
+         tabular CSV outputs, a GeoPackage, a static map, and an interactive HTML map support both visual review and reuse in a GIS.
+        </li>
+        <li>
+         <strong>
+          Priority review output:
+         </strong>
+         the workflow writes
+         <code>
+          top_20_vulnerable_municipalities.csv
+         </code>
+         ; the municipalities and scores should be quoted from that actual saved file rather than recreated from memory.
+        </li>
+       </ul>
+       <p>
+        No specific municipality ranking or index value is stated here because the project notes list the output artefact but do not include the saved ranking values.
+       </p>
+      </section>
+      <section class="case-study-section" id="outputs">
+       <h2>
+        Outputs and deliverables
+       </h2>
+       <ul>
+        <li>
+         <code>
+          data/processed/municipality_vulnerability.gpkg
+         </code>
+        </li>
+        <li>
+         <code>
+          data/processed/municipality_vulnerability_attributes.csv
+         </code>
+        </li>
+        <li>
+         <code>
+          data/outputs/top_20_vulnerable_municipalities.csv
+         </code>
+        </li>
+        <li>
+         <code>
+          data/outputs/vulnerability_index_map.png
+         </code>
+        </li>
+        <li>
+         <code>
+          data/outputs/interactive_vulnerability_map.html
+         </code>
+        </li>
+       </ul>
+       <h3>
+        Reusable scripts
+       </h3>
+       <ul>
+        <li>
+         <code>
+          scripts/config.py
+         </code>
+         &mdash; paths, source URLs, and layer/field configuration.
+        </li>
+        <li>
+         <code>
+          scripts/data_sources.py
+         </code>
+         &mdash; source registry.
+        </li>
+        <li>
+         <code>
+          scripts/wfs_utils.py
+         </code>
+         &mdash; WFS download helpers.
+        </li>
+        <li>
+         <code>
+          scripts/population_utils.py
+         </code>
+         &mdash; population-data parsing.
+        </li>
+        <li>
+         <code>
+          scripts/analysis_utils.py
+         </code>
+         &mdash; index and hotspot analysis.
+        </li>
+        <li>
+         <code>
+          scripts/plotting_utils.py
+         </code>
+         &mdash; map export.
+        </li>
+        <li>
+         <code>
+          scripts/export_utils.py
+         </code>
+         &mdash; CSV and GeoPackage export.
+        </li>
+       </ul>
+      </section>
+      <section class="case-study-section" id="validation">
+       <h2>
+        Assumptions and limitations
+       </h2>
+       <ul>
+        <li>
+         <strong>
+          Service provenance:
+         </strong>
+         WFS endpoints, layer IDs, schema, pagination, and availability can change; preserve the source URL, retrieval date, and selected layer on each run.
+        </li>
+        <li>
+         <strong>
+          Municipal scale:
+         </strong>
+         municipality-level indicators can hide variation inside a municipality.
+        </li>
+        <li>
+         <strong>
+          Hotspot settings:
+         </strong>
+         results depend on the chosen indicator, spatial weights/neighborhood definition, and significance settings.
+        </li>
+        <li>
+         <strong>
+          Data vintage:
+         </strong>
+         INE year-by-year population data and public resource layers may refer to different reference dates; record those dates before interpreting them together.
+        </li>
+       </ul>
+      </section>
+      <section class="case-study-section" id="next-steps">
+       <h2>
+        Next steps
+       </h2>
+       <ul>
+        <li>
+         Publish an indicator dictionary with the formula, unit, denominator, source vintage, and missing-data handling for each field.
+        </li>
+        <li>
+         Record exact WFS layer names/IDs and retrieval dates in the output metadata.
+        </li>
+        <li>
+         Link the final PNG and interactive HTML map from the README and this case study once the publication paths are confirmed.
+        </li>
+        <li>
+         Explain the exact hotspot parameters and the interpretation rules used for the top-20 output.
+        </li>
+       </ul>
+      </section>
+      <nav aria-label="Other case studies" class="case-study-related">
+       <a href="flood-exposure-mapping.html">
+        <span>
+         Previous case study
+        </span>
+        <strong>
+         <i aria-hidden="true" class="fa-solid fa-arrow-left me-1">
+         </i>
+         Flood Exposure Mapping
+        </strong>
+       </a>
+       <a href="harris-county-flood-risk.html">
+        <span>
+         Next case study
+        </span>
+        <strong>
+         Harris County Flood Risk
+         <i aria-hidden="true" class="fa-solid fa-arrow-right ms-1">
+         </i>
+        </strong>
+       </a>
+      </nav>
+     </article>
+     <aside aria-label="Case study navigation and summary" class="case-study-sidebar">
+      <section class="case-study-sidecard">
+       <h2>
+        At a glance
+       </h2>
+       <dl>
+        <dt>
+         Study area
+        </dt>
+        <dd>
+         Spain, municipal level
+        </dd>
+        <dt>
+         Sources
+        </dt>
+        <dd>
+         IGN/CNIG WFS, sigMayores WFS, INE
+        </dd>
+        <dt>
+         Workflow
+        </dt>
+        <dd>
+         Five ordered Jupyter notebooks + reusable Python scripts
+        </dd>
+        <dt>
+         Key outputs
+        </dt>
+        <dd>
+         GeoPackage, CSV tables, static and interactive maps
+        </dd>
+       </dl>
+      </section>
+      <section class="case-study-sidecard case-study-toc-card">
+       <h2>
+        On this page
+       </h2>
+       <nav aria-label="Case study sections" class="case-study-toc">
+        <a href="#overview">
+         Project overview
+        </a>
+        <a href="#data">
+         Data and sources
+        </a>
+        <a href="#workflow">
+         Method and workflow
+        </a>
+        <a href="#findings">
+         What the outputs support
+        </a>
+        <a href="#outputs">
+         Outputs and deliverables
+        </a>
+        <a href="#validation">
+         Validation and limitations
+        </a>
+        <a href="#next-steps">
+         Next steps
+        </a>
+       </nav>
+      </section>
+      <section class="case-study-sidecard">
+       <h2>
+        Professional context
+       </h2>
+       <p class="case-study-sidebar-copy mb-3">
+        This case study documents the analytical question, data preparation, spatial method, outputs, and interpretation so reviewers can assess the reasoning&mdash;not just the final map.
+       </p>
+       <a class="case-study-button primary w-100" href="../resume.html">
+        View Resume
+        <i aria-hidden="true" class="fa-solid fa-arrow-right">
+        </i>
+       </a>
+      </section>
+     </aside>
+    </div>
+    <section aria-labelledby="continue-title" class="case-study-end-cta">
+     <h2 id="continue-title">
+      Explore the rest of the portfolio
+     </h2>
+     <p>
+      Review related case studies, open the interactive Live Map, or return to the project overview to compare the scope and methods across projects.
+     </p>
+     <div class="case-study-actions">
+      <a class="case-study-button primary" href="../index.html#projects">
+       All GIS projects
+      </a>
+      <a class="case-study-button" href="../map.html">
+       Open Live Map
+      </a>
+      <a class="case-study-button" href="../resume.html">
+       Resume
+      </a>
+     </div>
+    </section>
+   </div>
+  </main>
+  <footer class="site-footer" id="contact">
+   <div class="site-container">
+    <div class="row g-4 align-items-start text-center">
+     <div class="col-12 col-lg-4">
+      <h2 class="footer-heading">
+       LinkedIn
+      </h2>
+      <p class="footer-copy mb-0">
+       Connect with me
+       <br/>
+       <a class="footer-link fw-bold" href="https://www.linkedin.com/in/emilesbmirandas/" rel="noopener noreferrer" target="_blank">
+        linkedin.com/in/emilesbmirandas/
+       </a>
+      </p>
+     </div>
+     <div class="col-12 col-lg-3">
+      <h2 class="footer-heading">
+       Around the Web
+      </h2>
+      <div class="footer-social justify-content-center">
+       <a aria-label="LinkedIn" class="btn btn-outline-light btn-social" href="https://www.linkedin.com/in/emilesbmirandas/" rel="noopener noreferrer" target="_blank">
+        <i aria-hidden="true" class="fa-brands fa-linkedin-in">
+        </i>
+       </a>
+       <a aria-label="Portfolio home" class="btn btn-outline-light btn-social" href="https://emilemiranda.github.io">
+        <i aria-hidden="true" class="fa-solid fa-globe">
+        </i>
+       </a>
+      </div>
+     </div>
+     <div class="col-12 col-lg-5">
+      <h2 class="footer-heading">
+       Get in touch
+      </h2>
+      <p class="footer-copy mb-0">
+       <a class="footer-link fw-bold" href="mailto:emile.sb.mirandas@clarks.com">
+        emile.sb.mirandas@clarks.com
+       </a>
+      </p>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <div class="site-copyright">
+   <div class="site-container">
+    <p>
+     Copyright &copy;
+     <span id="currentYear">
+     </span>
+     Emile SB Mirandas
+    </p>
+   </div>
+  </div>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <script defer="" src="../js/scripts.js">
+  </script>
+  <script defer="" src="../js/site.js">
+  </script>
+ </body>
+</html>

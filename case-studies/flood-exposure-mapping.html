@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="A Python flood-exposure screening workflow using a study-area clip, 100 m, 250 m, and 500 m distance bands, spatial joins, and GeoJSON building-exposure outputs." name="description"/>
+  <meta content="Emile SB Mirandas" name="author"/>
+  <title>
+   Flood Exposure Mapping | GIS Case Study &mdash; Emile SB Mirandas
+  </title>
+  <link href="../assets/logo.svg" rel="icon" type="image/svg+xml"/>
+  <link href="../assets/apple-touch-icon.png" rel="apple-touch-icon"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800|Lato:400,400italic,700,700italic" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet"/>
+  <link href="../css/styles.css" rel="stylesheet"/>
+  <link href="../css/case-studies.css" rel="stylesheet"/>
+ </head>
+ <body id="page-top">
+  <a class="skip-link" href="#main">
+   Skip to main content
+  </a>
+  <nav aria-label="Primary navigation" class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+   <div class="container">
+    <a aria-label="Emile SB Mirandas &mdash; home" class="navbar-brand" href="../index.html">
+     <span class="name-first">
+      Emile
+     </span>
+     <span class="name-middle">
+      SB
+      <span aria-hidden="true" class="custom-icon">
+       <i class="fa-regular fa-compass">
+       </i>
+      </span>
+     </span>
+     <span class="name-last">
+      Mirandas
+     </span>
+    </a>
+    <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarResponsive" data-bs-toggle="collapse" type="button">
+     <span class="visually-hidden">
+      Toggle navigation
+     </span>
+     <i aria-hidden="true" class="fa-solid fa-bars">
+     </i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+     <ul class="navbar-nav ms-auto">
+      <li class="nav-item mx-0 mx-lg-1">
+       <a class="nav-link" href="../index.html">
+        Home
+       </a>
+      </li>
+      <li class="nav-item mx-0 mx-lg-1">
+       <a class="nav-link" href="../index.html#portfolio">
+        Portfolio
+       </a>
+      </li>
+      <li class="nav-item mx-0 mx-lg-1">
+       <a aria-current="page" class="nav-link active" href="../index.html#projects">
+        Projects
+       </a>
+      </li>
+      <li class="nav-item mx-0 mx-lg-1">
+       <a class="nav-link" href="../map.html">
+        Live Map
+       </a>
+      </li>
+      <li class="nav-item mx-0 mx-lg-1">
+       <a class="nav-link" href="../index.html#about">
+        About
+       </a>
+      </li>
+      <li class="nav-item mx-0 mx-lg-1">
+       <a class="nav-link" href="../resume.html">
+        Resume
+       </a>
+      </li>
+      <li class="nav-item mx-0 mx-lg-1">
+       <a class="nav-link" href="../index.html#contact">
+        Contact
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </nav>
+  <main class="case-study-main" id="main" tabindex="-1">
+   <div class="case-study-wrap">
+    <nav aria-label="Breadcrumb" class="case-study-breadcrumbs">
+     <ol>
+      <li>
+       <a href="../index.html">
+        Home
+       </a>
+      </li>
+      <li>
+       <a href="../index.html#projects">
+        Projects
+       </a>
+      </li>
+      <li aria-current="page">
+       Flood Exposure Mapping
+      </li>
+     </ol>
+    </nav>
+    <header class="case-study-hero">
+     <div class="case-study-hero-copy">
+      <span class="case-study-eyebrow">
+       <i aria-hidden="true" class="fa-solid fa-water">
+       </i>
+       Environmental Risk &amp; Resilience &middot; Case Study 03/05
+      </span>
+      <h1 class="case-study-title">
+       Flood Exposure Mapping
+      </h1>
+      <p class="case-study-lead">
+       A reproducible Python GIS workflow that clips prepared spatial layers to a study area, constructs 100 m, 250 m, and 500 m distance bands, and joins building footprints to those bands for exposure screening.
+      </p>
+      <div class="case-study-tags">
+       <span class="case-study-tag">
+        Python
+       </span>
+       <span class="case-study-tag">
+        GeoPandas
+       </span>
+       <span class="case-study-tag">
+        Shapely
+       </span>
+       <span class="case-study-tag">
+        GeoJSON
+       </span>
+       <span class="case-study-tag">
+        Projected CRS
+       </span>
+       <span class="case-study-tag">
+        Spatial joins
+       </span>
+      </div>
+      <div class="case-study-actions">
+       <a class="case-study-button primary" href="../index.html#projects">
+        <i aria-hidden="true" class="fa-solid fa-arrow-left">
+        </i>
+        All projects
+       </a>
+       <a class="case-study-button" href="../map.html">
+        <i aria-hidden="true" class="fa-solid fa-map-location-dot">
+        </i>
+        Explore Live Map
+       </a>
+      </div>
+     </div>
+     <figure class="case-study-hero-figure">
+      <img alt="Flood Exposure Mapping project visual" decoding="async" src="../assets/img/projects/flood-exposure.png"/>
+      <figcaption>
+       Portfolio visual for the flood-exposure workflow. The project outputs include individual distance-band layers and a combined at-risk building dataset.
+      </figcaption>
+     </figure>
+    </header>
+    <div class="case-study-layout">
+     <article class="case-study-article">
+      <section class="case-study-section" id="overview">
+       <h2>
+        Project overview
+       </h2>
+       <p>
+        This project demonstrates a focused, reproducible geoprocessing workflow for screening buildings against defined spatial criteria. The documented workflow uses a study-area polygon, checks coordinate reference systems, constructs 100 m, 250 m, and 500 m distance bands, matches building footprints to the bands, and exports the resulting layers.
+       </p>
+       <div class="case-study-note">
+        <strong>
+         Project question:
+        </strong>
+        Which building footprints meet the chosen spatial exposure criteria within the study area, and how can the result be exported as separate distance bands and a combined review dataset?
+       </div>
+       <p>
+        This is an exposure-screening workflow. It does not, by itself, estimate flood probability, expected damage, or financial loss.
+       </p>
+      </section>
+      <section class="case-study-section" id="data">
+       <h2>
+        Data and sources
+       </h2>
+       <ul>
+        <li>
+         <strong>
+          Building layer:
+         </strong>
+         <em>
+          Edificaciones. Recintos de edificaci&oacute;n
+         </em>
+         , listed from datos.gob.es / IDENA in the project notes.
+        </li>
+        <li>
+         <strong>
+          Flood-related source:
+         </strong>
+         <em>
+          Zonas inundables. Periodos de retorno del SNCZI
+         </em>
+         , listed from datos.gob.es / Navarra.
+        </li>
+        <li>
+         <strong>
+          Study area:
+         </strong>
+         a custom polygon used to limit processing to the target area.
+        </li>
+        <li>
+         <strong>
+          Outputs:
+         </strong>
+         GeoJSON files for risk/distance bands and matched building features.
+        </li>
+       </ul>
+       <div class="case-study-note">
+        <strong>
+         Data/methodology distinction to preserve:
+        </strong>
+        the supplied notes name an SNCZI flood-zone dataset and also describe buffering watercourses into 100 m, 250 m, and 500 m bands. These are not automatically the same geometry or meaning. The final repository and map legend should clearly state which input was buffered and should not label generated distance bands as official flood zones unless the source methodology supports that.
+       </div>
+      </section>
+      <section class="case-study-section" id="workflow">
+       <h2>
+        Method and workflow
+       </h2>
+       <ol class="case-study-step-list">
+        <li>
+         <strong>
+          Load prepared layers.
+         </strong>
+         Load building footprints, the flood-related input, and the study-area polygon.
+        </li>
+        <li>
+         <strong>
+          Validate spatial reference.
+         </strong>
+         Confirm the layers use a compatible projected CRS in meters before distance calculations.
+        </li>
+        <li>
+         <strong>
+          Clip to the study area.
+         </strong>
+         Restrict processing to the selected analysis boundary to reduce unnecessary geometry work.
+        </li>
+        <li>
+         <strong>
+          Create distance bands.
+         </strong>
+         Generate the documented 100 m, 250 m, and 500 m buffers around the watercourse geometry described in the workflow.
+        </li>
+        <li>
+         <strong>
+          Join buildings to bands.
+         </strong>
+         Use spatial joins/intersections to assign building footprints to the corresponding band outputs.
+        </li>
+        <li>
+         <strong>
+          Export and inspect.
+         </strong>
+         Export separate GeoJSON layers, consolidate the combined building output, and create a quick map for visual verification.
+        </li>
+       </ol>
+      </section>
+      <section class="case-study-section" id="findings">
+       <h2>
+        What the outputs demonstrate
+       </h2>
+       <ul>
+        <li>
+         <strong>
+          Study-area clipping reduces unnecessary processing.
+         </strong>
+         Limiting the geometry early makes the workflow lighter on memory and CPU for the defined study.
+        </li>
+        <li>
+         <strong>
+          Separate distance bands support comparison.
+         </strong>
+         Outputs for 100 m, 250 m, and 500 m make the effect of the chosen distance assumption visible.
+        </li>
+        <li>
+         <strong>
+          Structured outputs make review possible.
+         </strong>
+         Keeping each band and the combined building dataset separate supports inspection, remapping, and downstream screening.
+        </li>
+       </ul>
+       <p>
+        The supplied project description does not provide final feature counts per band, so no building total or risk ranking is asserted here. The buffer bands should be interpreted as distance-based screening outputs, not as official flood-return-period zones.
+       </p>
+      </section>
+      <section class="case-study-section" id="outputs">
+       <h2>
+        Outputs and deliverables
+       </h2>
+       <ul>
+        <li>
+         <code>
+          risk_zone_100m.geojson
+         </code>
+        </li>
+        <li>
+         <code>
+          risk_zone_250m.geojson
+         </code>
+        </li>
+        <li>
+         <code>
+          risk_zone_500m.geojson
+         </code>
+        </li>
+        <li>
+         <code>
+          buildings_0_100m.geojson
+         </code>
+        </li>
+        <li>
+         <code>
+          buildings_100_250m.geojson
+         </code>
+        </li>
+        <li>
+         <code>
+          buildings_250_500m.geojson
+         </code>
+        </li>
+        <li>
+         <code>
+          at_risk_buildings_combined.geojson
+         </code>
+        </li>
+        <li>
+         <code>
+          flood_exposure_linkedin_github_cover.png
+         </code>
+        </li>
+       </ul>
+      </section>
+      <section class="case-study-section" id="validation">
+       <h2>
+        Assumptions and limitations
+       </h2>
+       <ul>
+        <li>
+         Buffer distances are analytical assumptions; they are not substitutes for an official flood-hazard classification.
+        </li>
+        <li>
+         Building footprints may intersect more than one distance band, so the workflow should state whether overlaps are retained or assigned to one exclusive band.
+        </li>
+        <li>
+         Invalid geometry, CRS mismatch, boundary slivers, and source positional accuracy can affect spatial joins/intersections.
+        </li>
+        <li>
+         Exposure does not establish damage probability, building vulnerability, flood depth, or expected loss.
+        </li>
+        <li>
+         The provided notes do not specify an exact study-area name, CRS identifier, feature counts, or retrieval dates; those should be recorded with the saved outputs.
+        </li>
+       </ul>
+      </section>
+      <section class="case-study-section" id="next-steps">
+       <h2>
+        Next steps
+       </h2>
+       <ul>
+        <li>
+         Add a map with source credits, study-area boundary, legend, projected CRS, and dataset dates.
+        </li>
+        <li>
+         Publish verified feature counts for each band from the exported GeoJSON files.
+        </li>
+        <li>
+         Resolve and document the precise relationship between the named SNCZI source and the watercourse buffer geometry.
+        </li>
+        <li>
+         Decide how to handle buildings that fall into multiple bands, and write that rule into the method documentation.
+        </li>
+        <li>
+         Consider packaging source layers in GeoPackage to reduce missing-file issues common with multi-file Shapefiles.
+        </li>
+       </ul>
+      </section>
+      <nav aria-label="Other case studies" class="case-study-related">
+       <a href="nyc-healthcare-accessibility.html">
+        <span>
+         Previous case study
+        </span>
+        <strong>
+         <i aria-hidden="true" class="fa-solid fa-arrow-left me-1">
+         </i>
+         NYC Healthcare Accessibility
+        </strong>
+       </a>
+       <a href="spain-healthcare-accessibility.html">
+        <span>
+         Next case study
+        </span>
+        <strong>
+         Spain Healthcare Accessibility
+         <i aria-hidden="true" class="fa-solid fa-arrow-right ms-1">
+         </i>
+        </strong>
+       </a>
+      </nav>
+     </article>
+     <aside aria-label="Case study navigation and summary" class="case-study-sidebar">
+      <section class="case-study-sidecard">
+       <h2>
+        At a glance
+       </h2>
+       <dl>
+        <dt>
+         Discipline
+        </dt>
+        <dd>
+         Environmental exposure screening
+        </dd>
+        <dt>
+         Distance bands
+        </dt>
+        <dd>
+         100 m &middot; 250 m &middot; 500 m
+        </dd>
+        <dt>
+         Primary methods
+        </dt>
+        <dd>
+         Python, GeoPandas, Shapely, spatial joins
+        </dd>
+        <dt>
+         Deliverables
+        </dt>
+        <dd>
+         Seven GeoJSON band/building outputs plus a cover image
+        </dd>
+       </dl>
+      </section>
+      <section class="case-study-sidecard case-study-toc-card">
+       <h2>
+        On this page
+       </h2>
+       <nav aria-label="Case study sections" class="case-study-toc">
+        <a href="#overview">
+         Project overview
+        </a>
+        <a href="#data">
+         Data and sources
+        </a>
+        <a href="#workflow">
+         Method and workflow
+        </a>
+        <a href="#findings">
+         What the outputs demonstrate
+        </a>
+        <a href="#outputs">
+         Outputs and deliverables
+        </a>
+        <a href="#validation">
+         Validation and limitations
+        </a>
+        <a href="#next-steps">
+         Next steps
+        </a>
+       </nav>
+      </section>
+      <section class="case-study-sidecard">
+       <h2>
+        Professional context
+       </h2>
+       <p class="case-study-sidebar-copy mb-3">
+        This case study documents the analytical question, data preparation, spatial method, outputs, and interpretation so reviewers can assess the reasoning&mdash;not just the final map.
+       </p>
+       <a class="case-study-button primary w-100" href="../resume.html">
+        View Resume
+        <i aria-hidden="true" class="fa-solid fa-arrow-right">
+        </i>
+       </a>
+      </section>
+     </aside>
+    </div>
+    <section aria-labelledby="continue-title" class="case-study-end-cta">
+     <h2 id="continue-title">
+      Explore the rest of the portfolio
+     </h2>
+     <p>
+      Review related case studies, open the interactive Live Map, or return to the project overview to compare the scope and methods across projects.
+     </p>
+     <div class="case-study-actions">
+      <a class="case-study-button primary" href="../index.html#projects">
+       All GIS projects
+      </a>
+      <a class="case-study-button" href="../map.html">
+       Open Live Map
+      </a>
+      <a class="case-study-button" href="../resume.html">
+       Resume
+      </a>
+     </div>
+    </section>
+   </div>
+  </main>
+  <footer class="site-footer" id="contact">
+   <div class="site-container">
+    <div class="row g-4 align-items-start text-center">
+     <div class="col-12 col-lg-4">
+      <h2 class="footer-heading">
+       LinkedIn
+      </h2>
+      <p class="footer-copy mb-0">
+       Connect with me
+       <br/>
+       <a class="footer-link fw-bold" href="https://www.linkedin.com/in/emilesbmirandas/" rel="noopener noreferrer" target="_blank">
+        linkedin.com/in/emilesbmirandas/
+       </a>
+      </p>
+     </div>
+     <div class="col-12 col-lg-3">
+      <h2 class="footer-heading">
+       Around the Web
+      </h2>
+      <div class="footer-social justify-content-center">
+       <a aria-label="LinkedIn" class="btn btn-outline-light btn-social" href="https://www.linkedin.com/in/emilesbmirandas/" rel="noopener noreferrer" target="_blank">
+        <i aria-hidden="true" class="fa-brands fa-linkedin-in">
+        </i>
+       </a>
+       <a aria-label="Portfolio home" class="btn btn-outline-light btn-social" href="https://emilemiranda.github.io">
+        <i aria-hidden="true" class="fa-solid fa-globe">
+        </i>
+       </a>
+      </div>
+     </div>
+     <div class="col-12 col-lg-5">
+      <h2 class="footer-heading">
+       Get in touch
+      </h2>
+      <p class="footer-copy mb-0">
+       <a class="footer-link fw-bold" href="mailto:emile.sb.mirandas@clarks.com">
+        emile.sb.mirandas@clarks.com
+       </a>
+      </p>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <div class="site-copyright">
+   <div class="site-container">
+    <p>
+     Copyright &copy;
+     <span id="currentYear">
+     </span>
+     Emile SB Mirandas
+    </p>
+   </div>
+  </div>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <script defer="" src="../js/scripts.js">
+  </script>
+  <script defer="" src="../js/site.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="A reproducible New York City healthcare accessibility workflow using local ACS 5-Year Summary Files, 2024 TIGER/Line census tracts, healthcare facility locations, one-mile buffers, and tract-level need indicators." name="description"/>
+  <meta content="Emile SB Mirandas" name="author"/>
+  <title>
+   NYC Healthcare Accessibility | GIS Case Study &mdash; Emile SB Mirandas
+  </title>
+  <link href="../assets/logo.svg" rel="icon" type="image/svg+xml"/>
+  <link href="../assets/apple-touch-icon.png" rel="apple-touch-icon"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800|Lato:400,400italic,700,700italic" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet"/>
+  <link href="../css/styles.css" rel="stylesheet"/>
+  <link href="../css/case-studies.css" rel="stylesheet"/>
+ </head>
+ <body id="page-top">
+  <a class="skip-link" href="#main">
+   Skip to main content
+  </a>
+  <nav aria-label="Primary navigation" class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+   <div class="container">
+    <a aria-label="Emile SB Mirandas &mdash; home" class="navbar-brand" href="../index.html">
+     <span class="name-first">
+      Emile
+     </span>
+     <span class="name-middle">
+      SB
+      <span aria-hidden="true" class="custom-icon">
+       <i class="fa-regular fa-compass">
+       </i>
+      </span>
+     </span>
+     <span class="name-last">
+      Mirandas
+     </span>
+    </a>
+    <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarResponsive" data-bs-toggle="collapse" type="button">
+     <span class="visually-hidden">
+      Toggle navigation
+     </span>
+     <i aria-hidden="true" class="fa-solid fa-bars">
+     </i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+     <ul class="navbar-nav ms-auto">
+      <li class="nav-item mx-0 mx-lg-1">
+       <a class="nav-link" href="../index.html">
+        Home
+       </a>
+      </li>
+      <li class="nav-item mx-0 mx-lg-1">
+       <a class="nav-link" href="../index.html#portfolio">
+        Portfolio
+       </a>
+      </li>
+      <li class="nav-item mx-0 mx-lg-1">
+       <a aria-current="page" class="nav-link active" href="../index.html#projects">
+        Projects
+       </a>
+      </li>
+      <li class="nav-item mx-0 mx-lg-1">
+       <a class="nav-link" href="../map.html">
+        Live Map
+       </a>
+      </li>
+      <li class="nav-item mx-0 mx-lg-1">
+       <a class="nav-link" href="../index.html#about">
+        About
+       </a>
+      </li>
+      <li class="nav-item mx-0 mx-lg-1">
+       <a class="nav-link" href="../resume.html">
+        Resume
+       </a>
+      </li>
+      <li class="nav-item mx-0 mx-lg-1">
+       <a class="nav-link" href="../index.html#contact">
+        Contact
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </nav>
+  <main class="case-study-main" id="main" tabindex="-1">
+   <div class="case-study-wrap">
+    <nav aria-label="Breadcrumb" class="case-study-breadcrumbs">
+     <ol>
+      <li>
+       <a href="../index.html">
+        Home
+       </a>
+      </li>
+      <li>
+       <a href="../index.html#projects">
+        Projects
+       </a>
+      </li>
+      <li aria-current="page">
+       NYC Healthcare Accessibility
+      </li>
+     </ol>
+    </nav>
+    <header class="case-study-hero">
+     <div class="case-study-hero-copy">
+      <span class="case-study-eyebrow">
+       <i aria-hidden="true" class="fa-solid fa-hospital">
+       </i>
+       Public Health &amp; Spatial Equity &middot; Case Study 02/05
+      </span>
+      <h1 class="case-study-title">
+       NYC Healthcare Accessibility
+      </h1>
+      <p class="case-study-lead">
+       An end-to-end Python GIS workflow that combines healthcare facility locations with local U.S. Census ACS Summary Files to estimate tract-level coverage, classify underserved census tracts, and generate candidate locations for further review.
+      </p>
+      <div class="case-study-tags">
+       <span class="case-study-tag">
+        ArcGIS API for Python
+       </span>
+       <span class="case-study-tag">
+        GeoPandas
+       </span>
+       <span class="case-study-tag">
+        pandas
+       </span>
+       <span class="case-study-tag">
+        NumPy
+       </span>
+       <span class="case-study-tag">
+        ACS Summary Files
+       </span>
+       <span class="case-study-tag">
+        TIGER/Line
+       </span>
+       <span class="case-study-tag">
+        GeoPackage
+       </span>
+      </div>
+      <div class="case-study-actions">
+       <a class="case-study-button primary" href="../index.html#projects">
+        <i aria-hidden="true" class="fa-solid fa-arrow-left">
+        </i>
+        All projects
+       </a>
+       <a class="case-study-button" href="../map.html">
+        <i aria-hidden="true" class="fa-solid fa-map-location-dot">
+        </i>
+        Explore Live Map
+       </a>
+      </div>
+     </div>
+     <figure class="case-study-hero-figure">
+      <img alt="NYC Healthcare Accessibility project visual" decoding="async" src="../assets/img/projects/nyc-healthcare.png"/>
+      <figcaption>
+       Portfolio visual for the NYC healthcare accessibility project. Use the exported coverage map alongside tract-level tables when publishing specific result counts.
+      </figcaption>
+     </figure>
+    </header>
+    <div class="case-study-layout">
+     <article class="case-study-article">
+      <section class="case-study-section" id="overview">
+       <h2>
+        Project overview
+       </h2>
+       <p>
+        This project evaluates healthcare accessibility across New York City&rsquo;s five boroughs using a reproducible workflow built around locally stored census tables and spatial processing. Its distinguishing implementation choice is that the primary analysis reads ACS Summary Files from disk instead of making live Census API requests during the analysis run.
+       </p>
+       <div class="case-study-note">
+        <strong>
+         Project question:
+        </strong>
+        How do healthcare facility locations relate to tract-level demographic need and estimated coverage, and which census-tract centroids should be reviewed as candidate areas for future healthcare investment?
+       </div>
+       <p>
+        The workflow keeps facilities, census geography, demographic attributes, coverage outputs, and candidate sites as reusable GIS layers so the analysis can be inspected in ArcGIS or QGIS.
+       </p>
+      </section>
+      <section class="case-study-section" id="data">
+       <h2>
+        Data and sources
+       </h2>
+       <ul>
+        <li>
+         <strong>
+          NYC Open Data:
+         </strong>
+         healthcare facility locations across New York City.
+        </li>
+        <li>
+         <strong>
+          U.S. Census Bureau:
+         </strong>
+         local ACS 5-Year Summary Files, including
+         <code>
+          B01003
+         </code>
+         (population),
+         <code>
+          B19013
+         </code>
+         (median household income), and
+         <code>
+          B25003
+         </code>
+         (housing tenure).
+        </li>
+        <li>
+         <strong>
+          ACS geography reference:
+         </strong>
+         <code>
+          Geos20235YR
+         </code>
+         , as listed in the project documentation.
+        </li>
+        <li>
+         <strong>
+          TIGER/Line:
+         </strong>
+         2024 census tract boundaries.
+        </li>
+       </ul>
+       <p>
+        The project notes do not give an exact NYC Open Data dataset title or an additional release date for the facility locations. Preserve those details in the repository&rsquo;s data-source record when preparing a fresh run.
+       </p>
+      </section>
+      <section class="case-study-section" id="workflow">
+       <h2>
+        Method and workflow
+       </h2>
+       <ol class="case-study-step-list">
+        <li>
+         <strong>
+          Acquire inputs.
+         </strong>
+         Download the NYC healthcare facility dataset, local ACS Summary Files, and TIGER/Line tract boundaries.
+        </li>
+        <li>
+         <strong>
+          Prepare the records.
+         </strong>
+         Standardize facility attributes and geometries, construct tract GEOIDs, merge ACS tables, and convert demographic fields to numeric types.
+        </li>
+        <li>
+         <strong>
+          Align the spatial data.
+         </strong>
+         Project the input layers into a common coordinate system suitable for spatial measurement.
+        </li>
+        <li>
+         <strong>
+          Build need indicators.
+         </strong>
+         Calculate population density and renter occupancy rates, then generate standardized demographic-need scores.
+        </li>
+        <li>
+         <strong>
+          Estimate coverage.
+         </strong>
+         Create one-mile hospital buffers and estimate healthcare coverage by census tract.
+        </li>
+        <li>
+         <strong>
+          Classify and rank candidates.
+         </strong>
+         Mark tracts with high demographic need and low coverage as underserved under the project&rsquo;s criteria; generate candidate locations from tract centroids ranked by priority.
+        </li>
+        <li>
+         <strong>
+          Export reviewable outputs.
+         </strong>
+         Produce tabular, GIS, and hosted/web deliverables.
+        </li>
+       </ol>
+       <div class="case-study-note">
+        <strong>
+         Method distinction:
+        </strong>
+        the project describes one-mile spatial buffers. These should not be presented as network-based walking or driving travel times unless a separate network analysis has been performed.
+       </div>
+      </section>
+      <section class="case-study-section" id="findings">
+       <h2>
+        What the outputs support
+       </h2>
+       <ul>
+        <li>
+         <strong>
+          Tract-level comparison:
+         </strong>
+         each tract can be examined alongside population, median household income, population density, renter share, coverage percentage, and a composite healthcare-need score.
+        </li>
+        <li>
+         <strong>
+          Transparent underserved classification:
+         </strong>
+         the workflow identifies tracts where the chosen demographic-need measure is high while estimated healthcare coverage is low.
+        </li>
+        <li>
+         <strong>
+          Candidate-site screening:
+         </strong>
+         centroid-based candidate locations provide places for follow-up analysis, not automatic facility siting decisions.
+        </li>
+        <li>
+         <strong>
+          Reproducible local inputs:
+         </strong>
+         once the required source files are in place, the main run does not depend on a live Census API request or its rate limits.
+        </li>
+       </ul>
+       <p>
+        The project summary does not include the final number of underserved tracts, coverage percentages, or specific candidate rankings. Those values should be reported from the saved output tables rather than estimated for this narrative.
+       </p>
+      </section>
+      <section class="case-study-section" id="outputs">
+       <h2>
+        Outputs and deliverables
+       </h2>
+       <ul>
+        <li>
+         Clean healthcare facility dataset.
+        </li>
+        <li>
+         Census-tract demographic dataset.
+        </li>
+        <li>
+         Healthcare coverage polygons and coverage indicators.
+        </li>
+        <li>
+         Underserved census-tract classifications.
+        </li>
+        <li>
+         Candidate healthcare locations generated from ranked tract centroids.
+        </li>
+        <li>
+         ArcGIS outputs: CSV, GeoJSON, Shapefile, Hosted Feature Layers, and a Web Map.
+        </li>
+        <li>
+         QGIS GeoPackage containing Hospitals, Census Tracts, Coverage Areas, and Candidate Sites.
+        </li>
+        <li>
+         Publication-ready maps.
+        </li>
+       </ul>
+      </section>
+      <section class="case-study-section" id="validation">
+       <h2>
+        Assumptions and limitations
+       </h2>
+       <ul>
+        <li>
+         <strong>
+          Buffer interpretation:
+         </strong>
+         one-mile buffers are geometric proximity zones unless network travel analysis is added.
+        </li>
+        <li>
+         <strong>
+          ACS uncertainty:
+         </strong>
+         ACS estimates have sampling uncertainty; retain the relevant estimate metadata when interpreting small-area differences.
+        </li>
+        <li>
+         <strong>
+          Geographic vintage:
+         </strong>
+         ensure tract boundaries and ACS geography identifiers are compatible before joining and comparing areas.
+        </li>
+        <li>
+         <strong>
+          Area-level interpretation:
+         </strong>
+         a tract summary does not mean every resident has the same level of access.
+        </li>
+        <li>
+         <strong>
+          Site selection is multi-factor.
+         </strong>
+         Actual siting also needs factors such as transport networks, facility capacity, operating cost, demand, and suitability constraints.
+        </li>
+       </ul>
+      </section>
+      <section class="case-study-section" id="next-steps">
+       <h2>
+        Next steps
+       </h2>
+       <ul>
+        <li>
+         Publish the exact coverage denominator and the threshold/standardization rules used for the need score.
+        </li>
+        <li>
+         Add verified counts for tracts evaluated and classified as underserved.
+        </li>
+        <li>
+         Test network-based travel-time accessibility and multi-criteria candidate-site suitability.
+        </li>
+        <li>
+         Expand the set of ACS indicators where a clear rationale and data provenance are available.
+        </li>
+        <li>
+         Document the local ACS files and source facility dataset so another analyst can reproduce the input snapshot.
+        </li>
+       </ul>
+      </section>
+      <nav aria-label="Other case studies" class="case-study-related">
+       <a href="madrid-mobility.html">
+        <span>
+         Previous case study
+        </span>
+        <strong>
+         <i aria-hidden="true" class="fa-solid fa-arrow-left me-1">
+         </i>
+         Madrid Mobility
+        </strong>
+       </a>
+       <a href="flood-exposure-mapping.html">
+        <span>
+         Next case study
+        </span>
+        <strong>
+         Flood Exposure Mapping
+         <i aria-hidden="true" class="fa-solid fa-arrow-right ms-1">
+         </i>
+        </strong>
+       </a>
+      </nav>
+     </article>
+     <aside aria-label="Case study navigation and summary" class="case-study-sidebar">
+      <section class="case-study-sidecard">
+       <h2>
+        At a glance
+       </h2>
+       <dl>
+        <dt>
+         Study area
+        </dt>
+        <dd>
+         New York City, five boroughs
+        </dd>
+        <dt>
+         Census inputs
+        </dt>
+        <dd>
+         ACS 5-Year Summary Files; Geos20235YR
+        </dd>
+        <dt>
+         Boundary vintage
+        </dt>
+        <dd>
+         TIGER/Line 2024 census tracts
+        </dd>
+        <dt>
+         Deliverables
+        </dt>
+        <dd>
+         Coverage layers, underserved tracts, candidate sites, ArcGIS/QGIS exports
+        </dd>
+       </dl>
+      </section>
+      <section class="case-study-sidecard case-study-toc-card">
+       <h2>
+        On this page
+       </h2>
+       <nav aria-label="Case study sections" class="case-study-toc">
+        <a href="#overview">
+         Project overview
+        </a>
+        <a href="#data">
+         Data and sources
+        </a>
+        <a href="#workflow">
+         Method and workflow
+        </a>
+        <a href="#findings">
+         What the outputs support
+        </a>
+        <a href="#outputs">
+         Outputs and deliverables
+        </a>
+        <a href="#validation">
+         Validation and limitations
+        </a>
+        <a href="#next-steps">
+         Next steps
+        </a>
+       </nav>
+      </section>
+      <section class="case-study-sidecard">
+       <h2>
+        Professional context
+       </h2>
+       <p class="case-study-sidebar-copy mb-3">
+        This case study documents the analytical question, data preparation, spatial method, outputs, and interpretation so reviewers can assess the reasoning&mdash;not just the final map.
+       </p>
+       <a class="case-study-button primary w-100" href="../resume.html">
+        View Resume
+        <i aria-hidden="true" class="fa-solid fa-arrow-right">
+        </i>
+       </a>
+      </section>
+     </aside>
+    </div>
+    <section aria-labelledby="continue-title" class="case-study-end-cta">
+     <h2 id="continue-title">
+      Explore the rest of the portfolio
+     </h2>
+     <p>
+      Review related case studies, open the interactive Live Map, or return to the project overview to compare the scope and methods across projects.
+     </p>
+     <div class="case-study-actions">
+      <a class="case-study-button primary" href="../index.html#projects">
+       All GIS projects
+      </a>
+      <a class="case-study-button" href="../map.html">
+       Open Live Map
+      </a>
+      <a class="case-study-button" href="../resume.html">
+       Resume
+      </a>
+     </div>
+    </section>
+   </div>
+  </main>
+  <footer class="site-footer" id="contact">
+   <div class="site-container">
+    <div class="row g-4 align-items-start text-center">
+     <div class="col-12 col-lg-4">
+      <h2 class="footer-heading">
+       LinkedIn
+      </h2>
+      <p class="footer-copy mb-0">
+       Connect with me
+       <br/>
+       <a class="footer-link fw-bold" href="https://www.linkedin.com/in/emilesbmirandas/" rel="noopener noreferrer" target="_blank">
+        linkedin.com/in/emilesbmirandas/
+       </a>
+      </p>
+     </div>
+     <div class="col-12 col-lg-3">
+      <h2 class="footer-heading">
+       Around the Web
+      </h2>
+      <div class="footer-social justify-content-center">
+       <a aria-label="LinkedIn" class="btn btn-outline-light btn-social" href="https://www.linkedin.com/in/emilesbmirandas/" rel="noopener noreferrer" target="_blank">
+        <i aria-hidden="true" class="fa-brands fa-linkedin-in">
+        </i>
+       </a>
+       <a aria-label="Portfolio home" class="btn btn-outline-light btn-social" href="https://emilemiranda.github.io">
+        <i aria-hidden="true" class="fa-solid fa-globe">
+        </i>
+       </a>
+      </div>
+     </div>
+     <div class="col-12 col-lg-5">
+      <h2 class="footer-heading">
+       Get in touch
+      </h2>
+      <p class="footer-copy mb-0">
+       <a class="footer-link fw-bold" href="mailto:emile.sb.mirandas@clarks.com">
+        emile.sb.mirandas@clarks.com
+       </a>
+      </p>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <div class="site-copyright">
+   <div class="site-container">
+    <p>
+     Copyright &copy;
+     <span id="currentYear">
+     </span>
+     Emile SB Mirandas
+    </p>
+   </div>
+  </div>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <script defer="" src="../js/scripts.js">
+  </script>
+  <script defer="" src="../js/site.js">
+  </script>
+ </body>
+</html>

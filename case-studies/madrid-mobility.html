@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="A reproducible Madrid mobility accessibility analysis using official Madrid and EMT open data, BiciMAD station and usage context, neighborhood and district boundaries, and buffer-based spatial overlays." name="description"/>
+  <meta content="Emile SB Mirandas" name="author"/>
+  <title>
+   Madrid Mobility Accessibility | GIS Case Study &mdash; Emile SB Mirandas
+  </title>
+  <link href="../assets/logo.svg" rel="icon" type="image/svg+xml"/>
+  <link href="../assets/apple-touch-icon.png" rel="apple-touch-icon"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800|Lato:400,400italic,700,700italic" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet"/>
+  <link href="../css/styles.css" rel="stylesheet"/>
+  <link href="../css/case-studies.css" rel="stylesheet"/>
+ </head>
+ <body id="page-top">
+  <a class="skip-link" href="#main">
+   Skip to main content
+  </a>
+  <nav aria-label="Primary navigation" class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+   <div class="container">
+    <a aria-label="Emile SB Mirandas &mdash; home" class="navbar-brand" href="../index.html">
+     <span class="name-first">
+      Emile
+     </span>
+     <span class="name-middle">
+      SB
+      <span aria-hidden="true" class="custom-icon">
+       <i class="fa-regular fa-compass">
+       </i>
+      </span>
+     </span>
+     <span class="name-last">
+      Mirandas
+     </span>
+    </a>
+    <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarResponsive" data-bs-toggle="collapse" type="button">
+     <span class="visually-hidden">
+      Toggle navigation
+     </span>
+     <i aria-hidden="true" class="fa-solid fa-bars">
+     </i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+     <ul class="navbar-nav ms-auto">
+      <li class="nav-item mx-0 mx-lg-1">
+       <a class="nav-link" href="../index.html">
+        Home
+       </a>
+      </li>
+      <li class="nav-item mx-0 mx-lg-1">
+       <a class="nav-link" href="../index.html#portfolio">
+        Portfolio
+       </a>
+      </li>
+      <li class="nav-item mx-0 mx-lg-1">
+       <a aria-current="page" class="nav-link active" href="../index.html#projects">
+        Projects
+       </a>
+      </li>
+      <li class="nav-item mx-0 mx-lg-1">
+       <a class="nav-link" href="../map.html">
+        Live Map
+       </a>
+      </li>
+      <li class="nav-item mx-0 mx-lg-1">
+       <a class="nav-link" href="../index.html#about">
+        About
+       </a>
+      </li>
+      <li class="nav-item mx-0 mx-lg-1">
+       <a class="nav-link" href="../resume.html">
+        Resume
+       </a>
+      </li>
+      <li class="nav-item mx-0 mx-lg-1">
+       <a class="nav-link" href="../index.html#contact">
+        Contact
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </nav>
+  <main class="case-study-main" id="main" tabindex="-1">
+   <div class="case-study-wrap">
+    <nav aria-label="Breadcrumb" class="case-study-breadcrumbs">
+     <ol>
+      <li>
+       <a href="../index.html">
+        Home
+       </a>
+      </li>
+      <li>
+       <a href="../index.html#projects">
+        Projects
+       </a>
+      </li>
+      <li aria-current="page">
+       Madrid Mobility
+      </li>
+     </ol>
+    </nav>
+    <header class="case-study-hero">
+     <div class="case-study-hero-copy">
+      <span class="case-study-eyebrow">
+       <i aria-hidden="true" class="fa-solid fa-city">
+       </i>
+       Mobility &amp; Accessibility &middot; Case Study 01/05
+      </span>
+      <h1 class="case-study-title">
+       Madrid Mobility Accessibility
+      </h1>
+      <p class="case-study-lead">
+       A reproducible GIS workflow that combines BiciMAD stations and available usage context with EMT bus stops and routes to compare mobility-service coverage across Madrid neighborhoods and districts.
+      </p>
+      <div class="case-study-tags">
+       <span class="case-study-tag">
+        Python
+       </span>
+       <span class="case-study-tag">
+        GeoPandas
+       </span>
+       <span class="case-study-tag">
+        Madrid Open Data
+       </span>
+       <span class="case-study-tag">
+        EMT
+       </span>
+       <span class="case-study-tag">
+        BiciMAD
+       </span>
+       <span class="case-study-tag">
+        GeoJSON
+       </span>
+      </div>
+      <div class="case-study-actions">
+       <a class="case-study-button primary" href="../index.html#projects">
+        <i aria-hidden="true" class="fa-solid fa-arrow-left">
+        </i>
+        All projects
+       </a>
+       <a class="case-study-button" href="../map.html">
+        <i aria-hidden="true" class="fa-solid fa-map-location-dot">
+        </i>
+        Explore Live Map
+       </a>
+      </div>
+     </div>
+     <figure class="case-study-hero-figure">
+      <img alt="Madrid Mobility Accessibility project visual" decoding="async" src="../assets/img/projects/madrid-mobility.png"/>
+      <figcaption>
+       Portfolio visual for the Madrid mobility project. Pair this image with the exported access map and gap chart when the final result figures are added.
+      </figcaption>
+     </figure>
+    </header>
+    <div class="case-study-layout">
+     <article class="case-study-article">
+      <section class="case-study-section" id="overview">
+       <h2>
+        Project overview
+       </h2>
+       <p>
+        This project turns transport point and route datasets into neighborhood-level measures that can be compared across Madrid. It combines BiciMAD stations and usage context where available, EMT bus stops and routes, and official administrative boundaries for neighborhoods and districts.
+       </p>
+       <div class="case-study-note">
+        <strong>
+         Project question:
+        </strong>
+        How are bike-share and bus access points distributed across Madrid neighborhoods, and where do the chosen access rules indicate potential service gaps?
+       </div>
+       <p>
+        The workflow is designed as a reproducible analytical product: inputs are downloaded, cleaned, aligned spatially, summarized, and exported so a reviewer can inspect both the maps and the underlying tables.
+       </p>
+      </section>
+      <section class="case-study-section" id="data">
+       <h2>
+        Data and sources
+       </h2>
+       <ul>
+        <li>
+         <strong>
+          Madrid Open Data:
+         </strong>
+         official city open-data inputs documented in the project source registry.
+        </li>
+        <li>
+         <strong>
+          EMT:
+         </strong>
+         bus stops and route data used for the mobility coverage analysis.
+        </li>
+        <li>
+         <strong>
+          BiciMAD:
+         </strong>
+         station information and usage context where the available history fields support it.
+        </li>
+        <li>
+         <strong>
+          Administrative geography:
+         </strong>
+         official district and neighborhood boundaries used to summarize results.
+        </li>
+       </ul>
+       <div class="case-study-note">
+        <strong>
+         Documented data snapshot:
+        </strong>
+        the project README states that the official datasets used for the documented run were retrieved on
+        <strong>
+         18 June 2026
+        </strong>
+        . Record individual retrieval times and source versions in
+        <code>
+         data_sources.md
+        </code>
+        when regenerating results.
+       </div>
+       <p>
+        The supplied project notes do not identify a fixed walking-distance threshold. The actual configured buffer distance should be recorded beside any published score or map legend rather than inferred from this narrative.
+       </p>
+      </section>
+      <section class="case-study-section" id="workflow">
+       <h2>
+        Method and workflow
+       </h2>
+       <ol class="case-study-step-list">
+        <li>
+         <strong>
+          Acquire the source data.
+         </strong>
+         Download the relevant official city and EMT open-data inputs.
+        </li>
+        <li>
+         <strong>
+          Clean and standardize.
+         </strong>
+         Validate geometries, normalize fields, standardize the coordinate reference system (CRS), and create stable identifiers.
+        </li>
+        <li>
+         <strong>
+          Build access zones.
+         </strong>
+         Create service-area buffers around BiciMAD stations and EMT stops using the project&rsquo;s configured distance assumptions.
+        </li>
+        <li>
+         <strong>
+          Overlay with administrative units.
+         </strong>
+         Intersect service zones with neighborhood and district polygons.
+        </li>
+        <li>
+         <strong>
+          Calculate indicators.
+         </strong>
+         Derive coverage measures and classify potential service gaps using the documented rules.
+        </li>
+        <li>
+         <strong>
+          Export results.
+         </strong>
+         Save summary tables, GeoJSON layers, maps, and charts for review and reuse.
+        </li>
+       </ol>
+      </section>
+      <section class="case-study-section" id="findings">
+       <h2>
+        What the outputs measure
+       </h2>
+       <p>
+        The project defines a set of comparable, neighborhood-level indicators rather than relying only on point maps of stops and stations.
+       </p>
+       <ul>
+        <li>
+         <strong>
+          Area coverage:
+         </strong>
+         percentage of each neighborhood area within the configured walking-distance buffers of access points.
+        </li>
+        <li>
+         <strong>
+          Service inventory:
+         </strong>
+         number of EMT stops and number of BiciMAD stations in each neighborhood.
+        </li>
+        <li>
+         <strong>
+          Route presence:
+         </strong>
+         whether EMT route geometry is present within a neighborhood.
+        </li>
+        <li>
+         <strong>
+          Usage context:
+         </strong>
+         usage-weighted BiciMAD activity where the available history data contains suitable fields.
+        </li>
+       </ul>
+       <p>
+        These metrics support comparison of service patterns, but they do not by themselves prove that a resident can reach a stop in a given travel time. The project brief does not provide the actual score values or highest-/lowest-ranked neighborhoods, so this page does not name specific winners or gaps without a verified output table.
+       </p>
+      </section>
+      <section class="case-study-section" id="outputs">
+       <h2>
+        Outputs and deliverables
+       </h2>
+       <ul>
+        <li>
+         Neighborhood accessibility scores.
+        </li>
+        <li>
+         District summary statistics.
+        </li>
+        <li>
+         Service-gap summaries.
+        </li>
+        <li>
+         GeoJSON layers suitable for mapping.
+        </li>
+        <li>
+         PNG maps and charts, with planned figure names
+         <code>
+          access_map.png
+         </code>
+         and
+         <code>
+          gap_chart.png
+         </code>
+         under
+         <code>
+          results/figures/
+         </code>
+         .
+        </li>
+       </ul>
+       <p>
+        The repository is organized around a repeatable four-step script sequence:
+       </p>
+       <ol class="case-study-step-list">
+        <li>
+         <code>
+          scripts/01_download_data.py
+         </code>
+        </li>
+        <li>
+         <code>
+          scripts/02_clean_data.py
+         </code>
+        </li>
+        <li>
+         <code>
+          scripts/03_spatial_analysis.py
+         </code>
+        </li>
+        <li>
+         <code>
+          scripts/04_export_results.py
+         </code>
+        </li>
+       </ol>
+      </section>
+      <section class="case-study-section" id="validation">
+       <h2>
+        Assumptions and limitations
+       </h2>
+       <ul>
+        <li>
+         <strong>
+          Buffer coverage is a proxy.
+         </strong>
+         The project documentation explicitly notes that buffer-based access is not a full pedestrian street-network travel model.
+        </li>
+        <li>
+         <strong>
+          Usage data is conditional.
+         </strong>
+         Usage-weighted BiciMAD activity depends on which fields are available and complete in the history file.
+        </li>
+        <li>
+         <strong>
+          Spatial presence is not service quality.
+         </strong>
+         Stop/station counts and route presence do not by themselves measure service frequency, capacity, operating hours, or actual travel time.
+        </li>
+        <li>
+         <strong>
+          Data is time-dependent.
+         </strong>
+         The documented run uses a data snapshot retrieved on 18 June 2026; results may change as source portals are updated.
+        </li>
+       </ul>
+      </section>
+      <section class="case-study-section" id="next-steps">
+       <h2>
+        Next steps
+       </h2>
+       <ul>
+        <li>
+         Publish the exact configured buffer distances and the definitions of every score.
+        </li>
+        <li>
+         Use network-based pedestrian travel areas to complement the buffer proxy.
+        </li>
+        <li>
+         Extend the equity analysis to census-section scale where source data permits.
+        </li>
+        <li>
+         Explore time-of-day or monthly BiciMAD usage patterns where the source fields support them.
+        </li>
+        <li>
+         Add the verified access map and gap chart from the exported results folder.
+        </li>
+       </ul>
+      </section>
+      <nav aria-label="Other case studies" class="case-study-related">
+       <a href="../index.html#projects">
+        <span>
+         Back to projects
+        </span>
+        <strong>
+         <i aria-hidden="true" class="fa-solid fa-layer-group me-1">
+         </i>
+         All GIS projects
+        </strong>
+       </a>
+       <a href="nyc-healthcare-accessibility.html">
+        <span>
+         Next case study
+        </span>
+        <strong>
+         NYC Healthcare Accessibility
+         <i aria-hidden="true" class="fa-solid fa-arrow-right ms-1">
+         </i>
+        </strong>
+       </a>
+      </nav>
+     </article>
+     <aside aria-label="Case study navigation and summary" class="case-study-sidebar">
+      <section class="case-study-sidecard">
+       <h2>
+        At a glance
+       </h2>
+       <dl>
+        <dt>
+         Study area
+        </dt>
+        <dd>
+         Madrid, Spain
+        </dd>
+        <dt>
+         Data snapshot
+        </dt>
+        <dd>
+         18 June 2026 (as recorded in project README)
+        </dd>
+        <dt>
+         Primary methods
+        </dt>
+        <dd>
+         Python, GeoPandas, buffers, spatial overlays
+        </dd>
+        <dt>
+         Deliverables
+        </dt>
+        <dd>
+         Neighborhood scores, district summaries, GeoJSON, PNG maps/charts
+        </dd>
+       </dl>
+      </section>
+      <section class="case-study-sidecard case-study-toc-card">
+       <h2>
+        On this page
+       </h2>
+       <nav aria-label="Case study sections" class="case-study-toc">
+        <a href="#overview">
+         Project overview
+        </a>
+        <a href="#data">
+         Data and sources
+        </a>
+        <a href="#workflow">
+         Method and workflow
+        </a>
+        <a href="#findings">
+         What the outputs measure
+        </a>
+        <a href="#outputs">
+         Outputs and deliverables
+        </a>
+        <a href="#validation">
+         Validation and limitations
+        </a>
+        <a href="#next-steps">
+         Next steps
+        </a>
+       </nav>
+      </section>
+      <section class="case-study-sidecard">
+       <h2>
+        Professional context
+       </h2>
+       <p class="case-study-sidebar-copy mb-3">
+        This case study documents the analytical question, data preparation, spatial method, outputs, and interpretation so reviewers can assess the reasoning&mdash;not just the final map.
+       </p>
+       <a class="case-study-button primary w-100" href="../resume.html">
+        View Resume
+        <i aria-hidden="true" class="fa-solid fa-arrow-right">
+        </i>
+       </a>
+      </section>
+     </aside>
+    </div>
+    <section aria-labelledby="continue-title" class="case-study-end-cta">
+     <h2 id="continue-title">
+      Explore the rest of the portfolio
+     </h2>
+     <p>
+      Review related case studies, open the interactive Live Map, or return to the project overview to compare the scope and methods across projects.
+     </p>
+     <div class="case-study-actions">
+      <a class="case-study-button primary" href="../index.html#projects">
+       All GIS projects
+      </a>
+      <a class="case-study-button" href="../map.html">
+       Open Live Map
+      </a>
+      <a class="case-study-button" href="../resume.html">
+       Resume
+      </a>
+     </div>
+    </section>
+   </div>
+  </main>
+  <footer class="site-footer" id="contact">
+   <div class="site-container">
+    <div class="row g-4 align-items-start text-center">
+     <div class="col-12 col-lg-4">
+      <h2 class="footer-heading">
+       LinkedIn
+      </h2>
+      <p class="footer-copy mb-0">
+       Connect with me
+       <br/>
+       <a class="footer-link fw-bold" href="https://www.linkedin.com/in/emilesbmirandas/" rel="noopener noreferrer" target="_blank">
+        linkedin.com/in/emilesbmirandas/
+       </a>
+      </p>
+     </div>
+     <div class="col-12 col-lg-3">
+      <h2 class="footer-heading">
+       Around the Web
+      </h2>
+      <div class="footer-social justify-content-center">
+       <a aria-label="LinkedIn" class="btn btn-outline-light btn-social" href="https://www.linkedin.com/in/emilesbmirandas/" rel="noopener noreferrer" target="_blank">
+        <i aria-hidden="true" class="fa-brands fa-linkedin-in">
+        </i>
+       </a>
+       <a aria-label="Portfolio home" class="btn btn-outline-light btn-social" href="https://emilemiranda.github.io">
+        <i aria-hidden="true" class="fa-solid fa-globe">
+        </i>
+       </a>
+      </div>
+     </div>
+     <div class="col-12 col-lg-5">
+      <h2 class="footer-heading">
+       Get in touch
+      </h2>
+      <p class="footer-copy mb-0">
+       <a class="footer-link fw-bold" href="mailto:emile.sb.mirandas@clarks.com">
+        emile.sb.mirandas@clarks.com
+       </a>
+      </p>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <div class="site-copyright">
+   <div class="site-container">
+    <p>
+     Copyright &copy;
+     <span id="currentYear">
+     </span>
+     Emile SB Mirandas
+    </p>
+   </div>
+  </div>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <script defer="" src="../js/scripts.js">
+  </script>
+  <script defer="" src="../js/site.js">
+  </script>
+ </body>
+</html>
