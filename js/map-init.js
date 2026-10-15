@@ -632,12 +632,25 @@
                     body.appendChild(note);
                 }
 
-                toggle.addEventListener('click', () => {
-                    const collapsed = body.classList.toggle('is-collapsed');
-                    toggle.setAttribute('aria-expanded', String(!collapsed));
-                    toggle.setAttribute('aria-label', `${collapsed ? 'Expand' : 'Collapse'} ${name} legend`);
-                    toggle.innerHTML = `<i class="fa-solid ${collapsed ? 'fa-chevron-down' : 'fa-chevron-up'}" aria-hidden="true"></i>`;
-                });
+            toggle.addEventListener('click', (event) => {
+                // Keep this click from triggering another panel's click handler.
+                event.preventDefault();
+                event.stopPropagation();
+
+                // Collapse or expand only this layer's legend body.
+                const collapsed = body.classList.toggle('is-collapsed');
+
+                toggle.setAttribute('aria-expanded', String(!collapsed));
+                toggle.setAttribute(
+                    'aria-label',
+                    `${collapsed ? 'Expand' : 'Collapse'} ${name} legend`
+                );
+
+                toggle.innerHTML = `
+                    <i class="fa-solid ${collapsed ? 'fa-chevron-down' : 'fa-chevron-up'}"
+                       aria-hidden="true"></i>
+                `;
+            });
 
                 header.append(title, toggle);
                 section.append(header, body);
