@@ -786,3 +786,57 @@ h6,
   color: var(--site-accent);
   font-size: 1.1rem;
 }
+
+/* ========================================
+   FOOTER: CENTERED AND RESPONSIVE LAYOUT
+   ======================================== */
+
+/* Align the custom container with Bootstrap's row gutters */
+.site-footer .site-container {
+    padding-inline: 0.75rem;
+}
+
+/* Keep the footer row aligned within the container */
+.site-footer .site-container > .row {
+    align-items: flex-start;
+}
+
+/* Center the heading and all content in every column */
+.site-footer .site-container > .row > [class*="col-"] {
+    min-width: 0;
+    text-align: center;
+}
+
+/* Explicitly center all three footer headings */
+.site-footer .footer-heading {
+    width: 100%;
+    margin-inline: auto;
+    text-align: center;
+}
+
+/* Center the paragraphs and their links */
+.site-footer .footer-copy {
+    margin-inline: auto;
+    text-align: center;
+}
+
+/* Center the social buttons on desktop and mobile */
+.site-footer .footer-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* Distribute all three columns evenly on desktop */
+@media (min-width: 992px) {
+    .site-footer .site-container > .row > .col-lg-4,
+    .site-footer .site-container > .row > .col-lg-3,
+    .site-footer .site-container > .row > .col-lg-5 {
+        flex: 1 1 0%;
+        width: auto;
+        max-width: none;
+        min-width: 0;
+    }
+}
