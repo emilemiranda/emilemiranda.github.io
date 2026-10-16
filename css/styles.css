@@ -840,3 +840,14 @@ h6,
         min-width: 0;
     }
 }
+
+html {
+  scroll-padding-top: 6rem;
+}
+
+#portfolio,
+#projects,
+#about,
+#contact {
+  scroll-margin-top: 6rem;
+}
